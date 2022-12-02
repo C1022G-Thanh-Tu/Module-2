@@ -134,31 +134,31 @@ public class Numb {
         } else {
             switch (numbOutput/100) {
                 case 1:
-                    System.out.print("One hundred and ");
+                    System.out.print("One hundred");
                     break;
                 case 2:
-                    System.out.print("Two hundred and ");
+                    System.out.print("Two hundred");
                     break;
                 case 3:
-                    System.out.print("Three hundred and ");
+                    System.out.print("Three hundred");
                     break;
                 case 4:
-                    System.out.print("Four hundred and ");
+                    System.out.print("Four hundred");
                     break;
                 case 5:
-                    System.out.print("Five hundred and ");
+                    System.out.print("Five hundred");
                     break;
                 case 6:
-                    System.out.print("Six hundred and ");
+                    System.out.print("Six hundred");
                     break;
                 case 7:
-                    System.out.print("Seven hundred and ");
+                    System.out.print("Seven hundred");
                     break;
                 case 8:
-                    System.out.print("Eight hundred and ");
+                    System.out.print("Eight hundred");
                     break;
                 case 9:
-                    System.out.print("Nine hundred and ");
+                    System.out.print("Nine hundred");
                     break;
                 default:
                     System.out.println("out of ability");
@@ -168,61 +168,61 @@ public class Numb {
             } else if (numbOutput/10%10 == 1) {
                 switch (numbOutput%100) {
                     case 10:
-                        System.out.print("Ten");
+                        System.out.print(" and Ten");
                         break;
                     case 11:
-                        System.out.print("Eleven");
+                        System.out.print(" and Eleven");
                         break;
                     case 12:
-                        System.out.print("Twelve");
+                        System.out.print(" and Twelve");
                         break;
                     case 13:
-                        System.out.print("Thirteen");
+                        System.out.print(" and Thirteen");
                         break;
                     case 14:
-                        System.out.print("Fourteen");
+                        System.out.print("and Fourteen");
                         break;
                     case 15:
-                        System.out.print("Fifteen");
+                        System.out.print(" and Fifteen");
                         break;
                     case 16:
-                        System.out.print("Sixteen");
+                        System.out.print(" and Sixteen");
                         break;
                     case 17:
-                        System.out.print("Seventeen");
+                        System.out.print(" and Seventeen");
                         break;
                     case 18:
-                        System.out.print("Eigthteen");
+                        System.out.print(" and Eigthteen");
                         break;
                     case 19:
-                        System.out.print("Nineteen");
+                        System.out.print(" and Nineteen");
                         break;
                 }
             } else {
                 switch (numbOutput/10%10) {
                     case 2:
-                        System.out.print("Twenty ");
+                        System.out.print(" and Twenty ");
                         break;
                     case 3:
-                        System.out.print("Thirty ");
+                        System.out.print(" and Thirty ");
                         break;
                     case 4:
-                        System.out.print("Forty ");
+                        System.out.print(" and Forty ");
                         break;
                     case 5:
-                        System.out.print("Fifty ");
+                        System.out.print(" and Fifty ");
                         break;
                     case 6:
-                        System.out.print("Sixty ");
+                        System.out.print(" and Sixty ");
                         break;
                     case 7:
-                        System.out.print("Seventy ");
+                        System.out.print(" and Seventy ");
                         break;
                     case 8:
-                        System.out.print("Eighty ");
+                        System.out.print(" and Eighty ");
                         break;
                     case 9:
-                        System.out.print("Ninety ");
+                        System.out.print(" and Ninety ");
                         break;
                 }
                 switch (numbOutput%100%10) {
