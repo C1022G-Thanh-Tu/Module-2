@@ -30,7 +30,6 @@ public class ArrayFibonacciPrimes {
         for (i = 3; i<arr1.length; i++) {
             arr1[i] = arr1[i-1] + arr1[i-2];
         }
-        System.out.println(Arrays.toString(arr1));
         for (i=0; i<arr1.length; i++) {
             if (isPrime(arr1[i])) {
                 arr2[i] = arr1[i];
