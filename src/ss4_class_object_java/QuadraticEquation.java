@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class QuadraticEquation {
     private double a, b, c;
-    public double delta, r1, r2;
 
     public QuadraticEquation(double a, double b, double c) {
         this.a = a;
