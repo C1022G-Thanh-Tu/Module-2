@@ -1,52 +1,10 @@
-package ss4_class_object_java;
+package ss4_class_object_java.Baicanbac2;
+
+import ss4_class_object_java.QuadraticEquation;
 
 import java.util.Scanner;
 
-public class QuadraticEquation {
-    private double a, b, c;
-
-    public QuadraticEquation(double a, double b, double c) {
-        this.a = a;
-        this.b = b;
-        this.c = c;
-    }
-
-    public void setA(double a) {
-        this.a = a;
-    }
-
-    public void setB(double b) {
-        this.b = b;
-    }
-
-    public void setC(double c) {
-        this.c = c;
-    }
-
-    public double getA() {
-        return a;
-    }
-
-    public double getB() {
-        return b;
-    }
-
-    public double getC() {
-        return c;
-    }
-
-    public double getDiscriminant() {
-        return this.b*this.b - 4*this.a*this.c;
-    }
-
-    public double getRoot1() {
-        return (-this.b + Math.sqrt(this.getDiscriminant()))/(2*this.a);
-    }
-
-    public double getRoot2() {
-        return (-this.b - Math.sqrt(this.getDiscriminant()))/(2*this.a);
-    }
-
+public class QuadraticEquationMain {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Nhập giá trị a");
