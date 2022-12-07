@@ -9,7 +9,12 @@ public class SumCol {
         int col = Integer.parseInt(scanner.nextLine());
         int sum = 0;
         for (int i=0; i<array.length; i++) {
-            sum+=array[i][col];
+            if (col<0 || col >array.length) {
+                System.out.println("Không thể tính giá trị");
+                break;
+            } else {
+                sum+=array[i][col];
+            }
         }
         return "Tổng các số ở cột "+col+" là: " + sum;
     }
