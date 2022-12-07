@@ -1,4 +1,4 @@
-package ss4_class_object_java.Baicanbac2;
+package ss4_class_object_java.bai_can_bac_2;
 
 import ss4_class_object_java.QuadraticEquation;
 

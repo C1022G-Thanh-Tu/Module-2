@@ -1,4 +1,4 @@
-package ss4_class_object_java.Baiquat;
+package ss4_class_object_java.bai_quat;
 
 import ss4_class_object_java.Fan;
 
