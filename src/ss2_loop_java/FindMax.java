@@ -18,9 +18,9 @@ public class FindMax {
                 arr[i][j] = element;
             }
         }
-        int max = 0;
+        int max = arr[0][0];
         for (i=0; i<height; i++) {
-            for (j=0; j<length; j++) {
+            for (j=1; j<length; j++) {
                 if (arr[i][j] > max) {
                     max = arr[i][j];
                 }
