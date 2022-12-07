@@ -21,22 +21,30 @@ public class ArrayFibonacciPrimes {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Nhập số nguyên");
         int numbInput = Integer.parseInt(scanner.nextLine());
-        int[] arr = new int[numbInput];
+        int[] arr1 = new int[numbInput+1];
         int n1 = 0;
         int n2 = 1;
         int nTotal = n1 + n2;
         int count = 0;
         int i = 0;
-        while (count<numbInput) {
-            n1= n2;
+        while (nTotal<=numbInput) {
+            n1 = n2;
             n2 = nTotal;
             nTotal = n1 + n2;
             if (isPrime(nTotal)) {
-                arr[i] = nTotal;
-                i++;
-                count++;
+                if (nTotal<=numbInput) {
+                    arr1[i] = nTotal;
+                    i++;
+                    count++;
+                }
             }
         }
-        System.out.println(Arrays.toString(arr));
+        int[] arr2 = new int[count];
+        for (i=0; i<count; i++) {
+            if (arr1[i] != 0) {
+                arr2[i] = arr1[i];
+            }
+        }
+        System.out.println(Arrays.toString(arr2));
     }
 }
