@@ -20,6 +20,6 @@ public class Circle {
     }
 
     public double getArea() {
-        return this.radius*this.radius*Math.PI;
+        return Math.pow(this.getRadius(), 2)*Math.PI;
     }
 }

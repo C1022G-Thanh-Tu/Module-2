@@ -1,13 +1,26 @@
 package ss5_access_modifier_static_method_static_property.access_modifier2;
 
 public class Student {
-    private String name = "John";
-    private String classes = "C02";
+    private String name;
+    private String classes;
+    private static String studyCenter = "Codegym";
 
-    public Student() {
-
+    public static String getStudyCenter() {
+        return studyCenter;
     }
 
+    public static void setStudyCenter(String studyCenter) {
+        Student.studyCenter = studyCenter;
+    }
+
+    public Student(String name, String classes) {
+        this.name = name;
+        this.classes = classes;
+    }
+
+    public Student() {
+        this("John", "C02");
+    }
     public String getName() {
         return name;
     }
@@ -22,5 +35,14 @@ public class Student {
 
     public void setClasses(String classes) {
         this.classes = classes;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", classes='" + classes + '\'' +
+                ", studyCenter='" + studyCenter + '\'' +
+                '}';
     }
 }
