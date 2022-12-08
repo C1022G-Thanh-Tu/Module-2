@@ -19,7 +19,7 @@ public class ArrayFibonacciPrimes {
     }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Nhập số nguyên");
+        System.out.print("Nhập số nguyên");
         int numbInput = Integer.parseInt(scanner.nextLine());
         int[] arr1 = new int[numbInput+1];
         int n1 = 0;
@@ -45,6 +45,6 @@ public class ArrayFibonacciPrimes {
                 arr2[i] = arr1[i];
             }
         }
-        System.out.println(Arrays.toString(arr2));
+        System.out.print(Arrays.toString(arr2));
     }
 }
