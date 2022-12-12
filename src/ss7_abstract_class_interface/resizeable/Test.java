@@ -1,7 +1,5 @@
 package ss7_abstract_class_interface.resizeable;
 
-import java.util.Arrays;
-
 public class Test {
     public static void main(String[] args) {
         Shape[] shapeArrray = new Shape[3];

@@ -1,6 +1,6 @@
 package ss7_abstract_class_interface.resizeable;
 
-public class Shape implements IResizeable{
+public abstract class Shape implements IResizeable{
     private String color;
     private boolean filled;
 
@@ -34,10 +34,5 @@ public class Shape implements IResizeable{
                 "color='" + color + '\'' +
                 ", filled=" + filled +
                 '}';
-    }
-
-    @Override
-    public void resize(double percent) {
-
     }
 }
