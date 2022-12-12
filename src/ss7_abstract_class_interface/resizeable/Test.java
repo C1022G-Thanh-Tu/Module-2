@@ -14,8 +14,8 @@ public class Test {
         shapeArrray[2].resize(0);
         System.out.println();
         System.out.println("DIện tích sau khi thay đổi");
-        shapeArrray[0].resize(Math.floor(Math.random()*100)+1);
-        shapeArrray[1].resize(Math.floor(Math.random()*100)+1);
-        shapeArrray[2].resize(Math.floor(Math.random()*100)+1);
+        shapeArrray[0].resize((Math.floor(Math.random()*100)+1)/100);
+        shapeArrray[1].resize((Math.floor(Math.random()*100)+1)/100);
+        shapeArrray[2].resize((Math.floor(Math.random()*100)+1)/100);
     }
 }
