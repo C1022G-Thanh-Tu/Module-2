@@ -1,6 +1,6 @@
 package ss7_abstract_class_interface.colorable;
 
-public abstract class Shape implements IColorable {
+public abstract class Shape {
     private String color;
     private boolean filled;
 

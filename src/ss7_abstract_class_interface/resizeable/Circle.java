@@ -25,7 +25,7 @@ public class Circle extends Shape implements IResizeable {
 
     @Override
     public void resize(double percent) {
-        System.out.println("Area of circle = " + (this.radius+this.radius*percent)*
+        System.out.println(+ (this.radius+this.radius*percent)*
                 (this.radius+this.radius*percent)*Math.PI);
     }
 }

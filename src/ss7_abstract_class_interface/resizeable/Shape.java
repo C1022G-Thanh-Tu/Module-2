@@ -1,6 +1,6 @@
 package ss7_abstract_class_interface.resizeable;
 
-public abstract class Shape implements IResizeable{
+public abstract class Shape {
     private String color;
     private boolean filled;
 
