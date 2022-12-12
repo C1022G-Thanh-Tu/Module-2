@@ -6,7 +6,7 @@ public class Test {
         shapeArray[0] = new Circle("red", true, 5.6);
         shapeArray[1] = new Rectangle("black", true, 5.8, 6.7);
         shapeArray[2]= new Square("blue", false, 4.9);
-        for (int i =0; i< shapeArray.length; i++) {
+        for (int i=0; i< shapeArray.length; i++) {
             if (shapeArray[i] instanceof Circle) {
                 Circle circle = (Circle) shapeArray[0];
                 System.out.println("Diện tích hình tròn trước khi thay đổi");
