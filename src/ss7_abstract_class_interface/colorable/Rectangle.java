@@ -34,9 +34,11 @@ public class Rectangle extends Shape implements IColorable {
     public void setName(String name) {
         this.name = name;
     }
-public void getArea() {
-    System.out.println("Diện tích hình chữ nhật: " + this.width*this.height);
-}
+
+    public void getArea() {
+        System.out.println("Diện tích hình chữ nhật: " + this.width * this.height);
+    }
+
     @Override
     public String toString() {
         return "Rectangle{" +
