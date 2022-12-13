@@ -25,10 +25,6 @@ public abstract class Shape {
         this.filled = filled;
     }
 
-    public void getArea(){
-        System.out.println("Tính diện tích hình tương ứng");
-    }
-
     @Override
     public String toString() {
         return "Shape{" +
