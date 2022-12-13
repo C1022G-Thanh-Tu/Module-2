@@ -14,12 +14,10 @@ public class Test {
                 System.out.println();
             } else if (shapeArr[i] instanceof Circle) {
                 Circle circle = (Circle) shapeArr[1];
-                circle.howToCoLor();
                 circle.getArea();
                 System.out.println();
             } else {
                 Rectangle rectangle = (Rectangle) shapeArr[2];
-                rectangle.howToCoLor();
                 rectangle.getArea();
             }
         }

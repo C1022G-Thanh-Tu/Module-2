@@ -26,6 +26,6 @@ public class Square extends Shape implements IResizeable {
 
     @Override
     public void resize(double percent) {
-        System.out.println("Area of square= " + Math.pow((this.width + this.width*percent), 2));
+        System.out.println(Math.pow((this.width + this.width*percent), 2));
     }
 }

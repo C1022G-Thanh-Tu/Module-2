@@ -1,6 +1,6 @@
 package ss7_abstract_class_interface.colorable;
 
-public class Rectangle extends Shape implements IColorable {
+public class Rectangle extends Shape {
     private double width, height;
     private String name;
 
@@ -46,14 +46,5 @@ public class Rectangle extends Shape implements IColorable {
                 ", height=" + height +
                 ", name='" + name + '\'' +
                 '}';
-    }
-
-    @Override
-    public void howToCoLor() {
-        if (isFilled()) {
-            System.out.println(this.name + ": Color all four sides.");
-        } else {
-            System.out.println(this.name + ": No color is filled.");
-        }
     }
 }

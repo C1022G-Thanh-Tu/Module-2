@@ -1,6 +1,6 @@
 package ss7_abstract_class_interface.colorable;
 
-public class Circle extends Shape implements IColorable {
+public class Circle extends Shape {
     private double radius;
     private String name;
     public Circle(String color, boolean filled, double radius, String name) {
@@ -34,14 +34,5 @@ public class Circle extends Shape implements IColorable {
         return "Circle{" +
                 "radius=" + radius +
                 '}';
-    }
-
-    @Override
-    public void howToCoLor() {
-        if (isFilled()) {
-            System.out.println(this.name + ": Color all four sides.");
-        } else {
-            System.out.println(this.name + ": No color is filled.");
-        }
     }
 }

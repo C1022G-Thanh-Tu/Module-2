@@ -36,6 +36,6 @@ public class Rectangle extends Shape implements IResizeable {
 
     @Override
     public void resize(double percent) {
-        System.out.println("Area of rectangle= " + (this.height + this.height*percent)*(this.width + this.width*percent));
+        System.out.println((this.height + this.height*percent)*(this.width + this.width*percent));
     }
 }
