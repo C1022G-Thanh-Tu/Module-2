@@ -1,4 +1,4 @@
-package ss10_DSA_danh_sach.arrayList;
+package ss10_DSA_list.arrayList;
 
 import java.util.Arrays;
 import java.util.IllformedLocaleException;
