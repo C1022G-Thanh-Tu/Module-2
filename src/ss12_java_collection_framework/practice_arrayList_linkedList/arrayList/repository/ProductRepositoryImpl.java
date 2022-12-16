@@ -58,6 +58,7 @@ public class ProductRepositoryImpl implements IProductRepository {
 
     @Override
     public void sortDescendingOrder() {
+        Collections.sort(productList);
         Collections.reverse(productList);
     }
 }
