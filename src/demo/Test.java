@@ -4,43 +4,22 @@ import java.util.*;
 
 public class Test {
     public static void main(String[] args) {
-//        Scanner scanner = new Scanner(System.in);
-//        Stack<String> stackArr = new Stack<String>();
-//        System.out.println("Nhập chuỗi");
-//        String str = scanner.nextLine();
-//        System.out.println(str.charAt(0));
-//        for (int i = 0; i < str.length(); i++) {
-//            stackArr.push(str.charAt(i)+"");
+        List<Product> productsArr = new ArrayList<>();
+        Product product1 = new Product(2,1000,"a");
+        Product product2 = new Product(1,2000,"b");
+        Product product3 = new Product(3,3000,"c");
+        productsArr.add(product1);
+        productsArr.add(product2);
+        productsArr.add(product3);
+//        Collections.sort(productsArr);
+//        for (Product product : productsArr) {
+//            System.out.println(product);
 //        }
-//        for (int i = 0; i < str.length(); i++) {
-//            System.out.print(stackArr.pop());
-//        }
-//        Queue<String> danhSachSV = new PriorityQueue<>();
-//        danhSachSV.offer("b");
-//        danhSachSV.offer("a");
-//        danhSachSV.offer("d");
-//        danhSachSV.offer("c");
-//        while (true) {
-//            String name = danhSachSV.poll();
-//            if (name == null) {
-//                break;
-//            }
-//            System.out.println(name);
-//        }
-        Deque<String> danhSachSv = new ArrayDeque<String>();
-        danhSachSv.offer("a");
-        danhSachSv.offer("b");
-        danhSachSv.offer("c");
-        danhSachSv.offer("d");
-        danhSachSv.offerLast("End");
-        danhSachSv.offerFirst("Start");
-        while (true) {
-            String name = danhSachSv.poll();
-            if (name == null) {
-                break;
+        for (int i =0; i< productsArr.size(); i++) {
+            if (productsArr.get(i).getId() == 2) {
+                productsArr.remove(productsArr.get(i));
             }
-            System.out.println(name);
         }
+        System.out.println(productsArr);
     }
-
 }

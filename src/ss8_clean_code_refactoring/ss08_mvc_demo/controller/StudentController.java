@@ -17,11 +17,10 @@ public class StudentController {
             System.out.println("1. List");
             System.out.println("2. Add");
             System.out.println("3. Exit");
-
             select = Integer.parseInt(scanner.nextLine());
             switch (select){
                 case 1: //list
-                    Student studentList[] = service.findAll();
+                    Student[] studentList = service.findAll();
                     for(Student student: studentList){
                         System.out.println(student);
                     }
