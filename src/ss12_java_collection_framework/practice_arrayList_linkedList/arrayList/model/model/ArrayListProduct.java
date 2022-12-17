@@ -46,6 +46,6 @@ public class ArrayListProduct implements Comparable<ArrayListProduct> {
 
     @Override
     public int compareTo(ArrayListProduct o) {
-        return this.id - o.getId();
+        return this.price - o.getPrice();
     }
 }

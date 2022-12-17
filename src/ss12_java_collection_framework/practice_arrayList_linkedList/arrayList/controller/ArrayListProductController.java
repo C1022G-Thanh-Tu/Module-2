@@ -37,9 +37,9 @@ public class ArrayListProductController {
                     int idNeedFixed = Integer.parseInt(scanner.nextLine());
                     System.out.print("Nhập id mới: ");
                     id = Integer.parseInt(scanner.nextLine());
-                    System.out.print("Nhập giá: ");
+                    System.out.print("Nhập giá mới: ");
                     price = Integer.parseInt(scanner.nextLine());
-                    System.out.print("Nhập tên sản phẩm: ");
+                    System.out.print("Nhập tên sản phẩm mới: ");
                     name = scanner.nextLine();
                     productService.updateProduct(idNeedFixed, new ArrayListProduct(id, name, price));
                     break;
