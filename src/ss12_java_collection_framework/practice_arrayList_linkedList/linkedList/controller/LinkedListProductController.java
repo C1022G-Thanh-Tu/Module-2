@@ -10,7 +10,6 @@ public class LinkedListProductController {
     private static final IArrayListProductManagerService productService = new ArrayListProductManagerService();
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int select = 0;
         do {
             System.out.println("-----Product Manager-------");
             System.out.println("1. Thêm sản phẩm");
@@ -21,7 +20,7 @@ public class LinkedListProductController {
             System.out.println("6. Sắp xếp sản phẩm theo thứ tự giá tăng dần");
             System.out.println("7. Sắp xếp sản phẩm theo thứ tự giá giảm dần");
             System.out.print("Hãy chọn một dịch vụ: ");
-            select = Integer.parseInt(scanner.nextLine());
+            int select = Integer.parseInt(scanner.nextLine());
             switch (select) {
                 case 1:
                     System.out.print("Nhập id: ");
