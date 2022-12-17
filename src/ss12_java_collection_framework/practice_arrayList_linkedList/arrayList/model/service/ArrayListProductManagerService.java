@@ -1,19 +1,19 @@
 package ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.model.service;
 
-import ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.model.model.Product;
-import ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.model.repository.IProductRepository;
-import ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.model.repository.ProductRepositoryImpl;
+import ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.model.model.ArrayListProduct;
+import ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.model.repository.IArrayListProductRepository;
+import ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.model.repository.ArrayListProductRepository;
 
-public class ProductManagerService implements IProductManagerService {
-    IProductRepository repository = new ProductRepositoryImpl();
+public class ArrayListProductManagerService implements IArrayListProductManagerService {
+    IArrayListProductRepository repository = new ArrayListProductRepository();
 
     @Override
-    public void addProduct(Product product) {
+    public void addProduct(ArrayListProduct product) {
         repository.addProduct(product);
     }
 
     @Override
-    public void updateProduct(int id, Product product) {
+    public void updateProduct(int id, ArrayListProduct product) {
         repository.updateProduct(id, product);
     }
 

@@ -1,14 +1,13 @@
-package ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.controller;
+package ss12_java_collection_framework.practice_arrayList_linkedList.linkedList.controller;
 
-import ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.model.model.Product;
-import ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.model.service.IProductManagerService;
-import ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.model.service.ProductManagerService;
+import ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.model.model.ArrayListProduct;
+import ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.model.service.IArrayListProductManagerService;
+import ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.model.service.ArrayListProductManagerService;
 
-import java.util.List;
 import java.util.Scanner;
 
-public class ProductController {
-    private static final IProductManagerService productService = new ProductManagerService();
+public class LinkedListProductController {
+    private static final IArrayListProductManagerService productService = new ArrayListProductManagerService();
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int select = 0;
@@ -32,7 +31,7 @@ public class ProductController {
                     int price = Integer.parseInt(scanner.nextLine());
                     System.out.print("Nhập tên sản phẩm: ");
                     String name = scanner.nextLine();
-                    productService.addProduct(new Product(id, price, name));
+                    productService.addProduct(new ArrayListProduct(id, price, name));
                     break;
                 case 2:
                     System.out.print("Nhập id cần sửa: ");
@@ -43,7 +42,7 @@ public class ProductController {
                     price = Integer.parseInt(scanner.nextLine());
                     System.out.print("Nhập tên sản phẩm: ");
                     name = scanner.nextLine();
-                    productService.updateProduct(idNeedFixed, new Product(id, price, name));
+                    productService.updateProduct(idNeedFixed, new ArrayListProduct(id, price, name));
                     break;
                 case 3:
                     System.out.print("Nhập id: ");

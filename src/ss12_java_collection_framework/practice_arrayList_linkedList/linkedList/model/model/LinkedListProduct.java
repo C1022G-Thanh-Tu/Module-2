@@ -1,16 +1,14 @@
-package ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.model.model;
+package ss12_java_collection_framework.practice_arrayList_linkedList.linkedList.model.model;
 
-import java.util.Comparator;
-
-public class Product implements Comparable<Product> {
+public class LinkedListProduct implements Comparable<LinkedListProduct> {
     private int id;
     private int price;
     private String name;
 
-    public Product() {
+    public LinkedListProduct() {
     }
 
-    public Product(int id, int price, String name) {
+    public LinkedListProduct(int id, int price, String name) {
         this.id = id;
         this.price = price;
         this.name = name;
@@ -50,7 +48,7 @@ public class Product implements Comparable<Product> {
     }
 
     @Override
-    public int compareTo(Product o) {
-        return this.id - o.getId();
+    public int compareTo(LinkedListProduct o) {
+        return this.price - o.getPrice();
     }
 }
