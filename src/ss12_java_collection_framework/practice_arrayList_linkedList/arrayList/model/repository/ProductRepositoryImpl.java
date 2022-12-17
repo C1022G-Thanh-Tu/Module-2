@@ -1,6 +1,6 @@
-package ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.repository;
+package ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.model.repository;
 
-import ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.model.Product;
+import ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.model.model.Product;
 
 import java.util.*;
 

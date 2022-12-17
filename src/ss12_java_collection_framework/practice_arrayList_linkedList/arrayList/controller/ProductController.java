@@ -1,8 +1,8 @@
 package ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.controller;
 
-import ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.model.Product;
-import ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.service.IProductManagerService;
-import ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.service.ProductManagerService;
+import ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.model.model.Product;
+import ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.model.service.IProductManagerService;
+import ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.model.service.ProductManagerService;
 
 import java.util.List;
 import java.util.Scanner;

@@ -1,8 +1,8 @@
-package ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.service;
+package ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.model.service;
 
-import ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.model.Product;
-import ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.repository.IProductRepository;
-import ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.repository.ProductRepositoryImpl;
+import ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.model.model.Product;
+import ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.model.repository.IProductRepository;
+import ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.model.repository.ProductRepositoryImpl;
 
 public class ProductManagerService implements IProductManagerService {
     IProductRepository repository = new ProductRepositoryImpl();

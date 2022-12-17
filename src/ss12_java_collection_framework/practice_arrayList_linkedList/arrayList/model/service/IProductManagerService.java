@@ -1,6 +1,6 @@
-package ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.service;
+package ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.model.service;
 
-import ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.model.Product;
+import ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.model.model.Product;
 
 public interface IProductManagerService {
     void addProduct(Product product);

@@ -1,4 +1,4 @@
-package ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.model;
+package ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.model.model;
 
 import java.util.Comparator;
 
