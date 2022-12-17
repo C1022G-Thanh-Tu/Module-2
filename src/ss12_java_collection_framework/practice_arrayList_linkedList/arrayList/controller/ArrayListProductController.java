@@ -19,6 +19,7 @@ public class ArrayListProductController {
         System.out.println("6. Sắp xếp sản phẩm theo thứ tự giá tăng dần");
         System.out.println("7. Sắp xếp sản phẩm theo thứ tự giá giảm dần");
         System.out.println("8. Thoát lựa chọn");
+        System.out.print("Hãy chọn một dịch vụ: ");
         do {
             int select = Integer.parseInt(scanner.nextLine());
             System.out.print("Hãy chọn một dịch vụ: ");

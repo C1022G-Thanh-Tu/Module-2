@@ -18,6 +18,7 @@ public class LinkedListProductController {
         System.out.println("5. Tìm sản phẩm theo tên");
         System.out.println("6. Sắp xếp sản phẩm theo thứ tự giá tăng dần");
         System.out.println("7. Sắp xếp sản phẩm theo thứ tự giá giảm dần");
+        System.out.print("Hãy chọn một dịch vụ: ");
         do {
             System.out.print("Hãy chọn một dịch vụ: ");
             int select = Integer.parseInt(scanner.nextLine());
