@@ -5,9 +5,6 @@ public class LinkedListProduct implements Comparable<LinkedListProduct> {
     private int price;
     private String name;
 
-    public LinkedListProduct() {
-    }
-
     public LinkedListProduct(int id, int price, String name) {
         this.id = id;
         this.price = price;
