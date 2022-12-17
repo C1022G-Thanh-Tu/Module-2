@@ -5,7 +5,7 @@ public class ArrayListProduct implements Comparable<ArrayListProduct> {
     private int price;
     private String name;
 
-    public ArrayListProduct(int id, int price, String name) {
+    public ArrayListProduct(int id, String name, int price) {
         this.id = id;
         this.price = price;
         this.name = name;

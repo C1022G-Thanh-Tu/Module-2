@@ -6,10 +6,10 @@ import java.util.*;
 
 public class ArrayListProductRepository implements IArrayListProductRepository {
     List<ArrayListProduct> productList = new ArrayList<>();
-    ArrayListProduct product1 = new ArrayListProduct(2, 1000000, "Máy ảnh");
-    ArrayListProduct product2 = new ArrayListProduct(1, 1200000, "Điện thoại");
-    ArrayListProduct product3 = new ArrayListProduct(4, 3000000, "Laptop");
-    ArrayListProduct product4 = new ArrayListProduct(3, 1500000, "Bàn phím");
+    ArrayListProduct product1 = new ArrayListProduct(2, "Máy ảnh", 1000000);
+    ArrayListProduct product2 = new ArrayListProduct(1, "Điện thoại", 1200000);
+    ArrayListProduct product3 = new ArrayListProduct(4, "Laptop", 3000000);
+    ArrayListProduct product4 = new ArrayListProduct(3, "Bàn phím", 1500000);
     public ArrayListProductRepository(){
         productList.add(product1);
         productList.add(product2);
