@@ -13,8 +13,8 @@ public class ProductManagerService implements IProductManagerService {
     }
 
     @Override
-    public void updateProduct(int id, int index, Product product1, Product product2) {
-        repository.updateProduct(id, index, product1, product2);
+    public void updateProduct(int id, Product product) {
+        repository.updateProduct(id, product);
     }
 
     @Override

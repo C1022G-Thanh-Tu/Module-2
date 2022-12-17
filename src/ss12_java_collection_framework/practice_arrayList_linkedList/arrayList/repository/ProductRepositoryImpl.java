@@ -20,9 +20,11 @@ public class ProductRepositoryImpl implements IProductRepository {
     }
 
     @Override
-    public void updateProduct(int id, int index, Product product1, Product product2) {
-        if (product2.getId() == id) {
-            productList.set(index, product1);
+    public void updateProduct(int id, Product product) {
+        for (int i = 0; i<productList.size(); i++) {
+            if (productList.get(i).getId() == id) {
+                productList.set(productList.indexOf(productList.get(i)), product);
+            }
         }
     }
 

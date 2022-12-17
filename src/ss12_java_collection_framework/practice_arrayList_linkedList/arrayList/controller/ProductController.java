@@ -36,15 +36,14 @@ public class ProductController {
                     break;
                 case 2:
                     System.out.print("Nhập id cần sửa: ");
-                    int idFix = Integer.parseInt(scanner.nextLine());
-                    System.out.print("Nhập id: ");
+                    int idNeedFixed = Integer.parseInt(scanner.nextLine());
+                    System.out.print("Nhập id mới: ");
                     id = Integer.parseInt(scanner.nextLine());
                     System.out.print("Nhập giá: ");
                     price = Integer.parseInt(scanner.nextLine());
                     System.out.print("Nhập tên sản phẩm: ");
                     name = scanner.nextLine();
-                    productService.updateProduct(idFix, idFix-1,
-                            new Product(id, price, name), new Product(idFix, price, name));
+                    productService.updateProduct(idNeedFixed, new Product(id, price, name));
                     break;
                 case 3:
                     System.out.print("Nhập id: ");
