@@ -10,19 +10,18 @@ public class ArrayListProductController {
     private static final IArrayListProductManagerService productService = new ArrayListProductManagerService();
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("-----Product Manager-------");
-        System.out.println("1. Thêm sản phẩm");
-        System.out.println("2. Điều chỉnh sản phẩm theo id");
-        System.out.println("3. Xóa sản phẩm");
-        System.out.println("4. Lấy danh sách sản phẩm");
-        System.out.println("5. Tìm sản phẩm theo tên");
-        System.out.println("6. Sắp xếp sản phẩm theo thứ tự giá tăng dần");
-        System.out.println("7. Sắp xếp sản phẩm theo thứ tự giá giảm dần");
-        System.out.println("8. Thoát lựa chọn");
-        System.out.print("Hãy chọn một dịch vụ: ");
         do {
-            int select = Integer.parseInt(scanner.nextLine());
+            System.out.println("-----Product Manager-------");
+            System.out.println("1. Thêm sản phẩm");
+            System.out.println("2. Điều chỉnh sản phẩm theo id");
+            System.out.println("3. Xóa sản phẩm");
+            System.out.println("4. Lấy danh sách sản phẩm");
+            System.out.println("5. Tìm sản phẩm theo tên");
+            System.out.println("6. Sắp xếp sản phẩm theo thứ tự giá tăng dần");
+            System.out.println("7. Sắp xếp sản phẩm theo thứ tự giá giảm dần");
+            System.out.println("8. Thoát lựa chọn");
             System.out.print("Hãy chọn một dịch vụ: ");
+            int select = Integer.parseInt(scanner.nextLine());
             switch (select) {
                 case 1:
                     System.out.print("Nhập id: ");
