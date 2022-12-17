@@ -7,8 +7,8 @@ import ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.mo
 import java.util.Scanner;
 
 public class ArrayListProductController {
-    private static final IArrayListProductManagerService productService = new ArrayListProductManagerService();
     public static void main(String[] args) {
+        IArrayListProductManagerService productService = new ArrayListProductManagerService();
         Scanner scanner = new Scanner(System.in);
         do {
             System.out.println("-----Product Manager-------");

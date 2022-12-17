@@ -11,11 +11,10 @@ public class PalindromeString {
         Queue<String> myQueueArr = new LinkedList<>();
         Scanner scanner = new Scanner(System.in);
         System.out.print("Nhập chuỗi: ");
-        String str = scanner.nextLine();
-        String strLowerCase = str.toLowerCase();
+        String str = scanner.nextLine().toLowerCase();
         for (int i = 0; i < str.length() ; i++) {
-            myStackArr.push(strLowerCase.charAt(i) + "");
-            myQueueArr.offer(strLowerCase.charAt(i) + "");
+            myStackArr.push(str.charAt(i) + "");
+            myQueueArr.offer(str.charAt(i) + "");
         }
         boolean flag = true;
         for (int i = 0; i < str.length(); i++) {

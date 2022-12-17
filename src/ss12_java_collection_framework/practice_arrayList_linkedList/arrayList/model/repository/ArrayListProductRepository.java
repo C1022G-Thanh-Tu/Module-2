@@ -28,6 +28,9 @@ public class ArrayListProductRepository implements IArrayListProductRepository {
         for (int i = 0; i<productList.size(); i++) {
             if (productList.get(i).getId() == id) {
                 productList.set(productList.indexOf(productList.get(i)), product);
+            } else {
+                System.out.println("Không tìm thấy sản phẩm có id tương ứng");
+                break;
             }
         }
     }
@@ -37,6 +40,9 @@ public class ArrayListProductRepository implements IArrayListProductRepository {
         for (int i = 0; i<productList.size(); i++) {
             if (productList.get(i).getId() == id) {
                 productList.remove(productList.get(i));
+            } else {
+                System.out.println("Không tìm thấy sản phẩm có id tương ứng");
+                break;
             }
         }
     }
@@ -53,6 +59,9 @@ public class ArrayListProductRepository implements IArrayListProductRepository {
         for (ArrayListProduct product : productList) {
             if (product.getName().equals(name)) {
                 System.out.println(product);
+            } else {
+                System.out.println("Không tìm thấy sản phẩm có tên tương ứng");
+                break;
             }
         }
     }
