@@ -13,14 +13,13 @@ public class LinkedListProductController {
         int select = 0;
         do {
             System.out.println("-----Product Manager-------");
-            System.out.println("1. Add");
-            System.out.println("2. Update");
-            System.out.println("3. Remove");
-            System.out.println("4. List");
-            System.out.println("5. Search");
-            System.out.println("6. Sort Ascending Order");
-            System.out.println("7. Sort Descending Order");
-            System.out.println("8. Exit");
+            System.out.println("1. Thêm sản phẩm");
+            System.out.println("2. Điều chỉnh sản phẩm theo id");
+            System.out.println("3. Xóa sản phẩm");
+            System.out.println("4. Lấy danh sách sản phẩm");
+            System.out.println("5. Tìm sản phẩm theo tên");
+            System.out.println("6. Sắp xếp sản phẩm theo thứ tự giá tăng dần");
+            System.out.println("7. Sắp xếp sản phẩm theo thứ tự giá giảm dần");
             System.out.print("Hãy chọn một dịch vụ: ");
             select = Integer.parseInt(scanner.nextLine());
             switch (select) {
