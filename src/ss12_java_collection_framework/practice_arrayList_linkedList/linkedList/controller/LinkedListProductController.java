@@ -31,7 +31,7 @@ public class LinkedListProductController {
                     int price = Integer.parseInt(scanner.nextLine());
                     System.out.print("Nhập tên sản phẩm: ");
                     String name = scanner.nextLine();
-                    productService.addProduct(new ArrayListProduct(id, price, name));
+                    productService.addProduct(new ArrayListProduct(id, name, price));
                     break;
                 case 2:
                     System.out.print("Nhập id cần sửa: ");
@@ -42,7 +42,7 @@ public class LinkedListProductController {
                     price = Integer.parseInt(scanner.nextLine());
                     System.out.print("Nhập tên sản phẩm: ");
                     name = scanner.nextLine();
-                    productService.updateProduct(idNeedFixed, new ArrayListProduct(id, price, name));
+                    productService.updateProduct(idNeedFixed, new ArrayListProduct(id, name, price));
                     break;
                 case 3:
                     System.out.print("Nhập id: ");

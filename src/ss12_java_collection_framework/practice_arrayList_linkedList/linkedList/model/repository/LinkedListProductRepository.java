@@ -7,13 +7,15 @@ import java.util.*;
 
 public class LinkedListProductRepository implements ILinkedListProductRepository {
     List<LinkedListProduct> productList = new LinkedList<>();
-    LinkedListProduct product1 = new LinkedListProduct(2, 1000000, "Máy ảnh");
-    LinkedListProduct product2 = new LinkedListProduct(1, 1200000, "Điện thoại");
-    LinkedListProduct product3 = new LinkedListProduct(3, 3000000, "Laptop");
+    LinkedListProduct product1 = new LinkedListProduct(2, "Máy ảnh", 1000000);
+    LinkedListProduct product2 = new LinkedListProduct(1, "Điện thoại", 1200000);
+    LinkedListProduct product3 = new LinkedListProduct(4, "Laptop", 3000000);
+    LinkedListProduct product4 = new LinkedListProduct(3, "Bàn phím", 1500000);
     public LinkedListProductRepository(){
         productList.add(product1);
         productList.add(product2);
         productList.add(product3);
+        productList.add(product4);
     }
     @Override
     public void addProduct(LinkedListProduct product) {
