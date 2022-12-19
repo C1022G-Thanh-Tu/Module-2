@@ -1,14 +1,14 @@
 package ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.controller;
 
 import ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.model.model.ArrayListProduct;
-import ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.model.service.IArrayListProductManagerService;
-import ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.model.service.ArrayListProductManagerService;
+import ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.model.service.IArrayListProductService;
+import ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.model.service.ArrayListProductService;
 
 import java.util.Scanner;
 
 public class ArrayListProductController {
     public static void main(String[] args) {
-        IArrayListProductManagerService productService = new ArrayListProductManagerService();
+        IArrayListProductService productService = new ArrayListProductService();
         Scanner scanner = new Scanner(System.in);
         do {
             System.out.println("-----Product Manager-------");
@@ -35,13 +35,11 @@ public class ArrayListProductController {
                 case 2:
                     System.out.print("Nhập id cần sửa: ");
                     int idNeedFixed = Integer.parseInt(scanner.nextLine());
-                    System.out.print("Nhập id mới: ");
-                    id = Integer.parseInt(scanner.nextLine());
                     System.out.print("Nhập giá mới: ");
                     price = Integer.parseInt(scanner.nextLine());
                     System.out.print("Nhập tên sản phẩm mới: ");
                     name = scanner.nextLine();
-                    productService.updateProduct(idNeedFixed, new ArrayListProduct(id, name, price));
+                    productService.updateProduct(idNeedFixed, new ArrayListProduct(idNeedFixed, name, price));
                     break;
                 case 3:
                     System.out.print("Nhập id: ");
@@ -64,6 +62,9 @@ public class ArrayListProductController {
                     break;
                 case 8:
                     System.exit(0);
+                    break;
+                default:
+                    System.out.println("Hãy lựa chọn dịch vụ có trong menu");
                     break;
             }
         } while (true);

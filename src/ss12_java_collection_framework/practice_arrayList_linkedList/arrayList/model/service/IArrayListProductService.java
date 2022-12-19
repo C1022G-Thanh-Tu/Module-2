@@ -2,7 +2,7 @@ package ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.m
 
 import ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.model.model.ArrayListProduct;
 
-public interface IArrayListProductManagerService {
+public interface IArrayListProductService {
     void addProduct(ArrayListProduct product);
     void updateProduct(int id, ArrayListProduct product);
     void removeProduct(int id);

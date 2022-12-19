@@ -4,7 +4,7 @@ import ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.mo
 import ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.model.repository.IArrayListProductRepository;
 import ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.model.repository.ArrayListProductRepository;
 
-public class ArrayListProductManagerService implements IArrayListProductManagerService {
+public class ArrayListProductService implements IArrayListProductService {
     IArrayListProductRepository repository = new ArrayListProductRepository();
 
     @Override

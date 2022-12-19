@@ -6,12 +6,12 @@ import java.util.*;
 
 public class ArrayListProductRepository implements IArrayListProductRepository {
     public static List<ArrayListProduct> productList = new ArrayList<>();
-    ArrayListProduct product1 = new ArrayListProduct(1, "Máy ảnh", 1000000);
-    ArrayListProduct product2 = new ArrayListProduct(2, "Điện thoại", 1200000);
-    ArrayListProduct product3 = new ArrayListProduct(3, "Laptop", 3000000);
-    ArrayListProduct product4 = new ArrayListProduct(4, "Bàn phím", 1500000);
 
-    public ArrayListProductRepository() {
+    static {
+        ArrayListProduct product1 = new ArrayListProduct(1, "Máy ảnh", 1000000);
+        ArrayListProduct product2 = new ArrayListProduct(2, "Điện thoại", 1200000);
+        ArrayListProduct product3 = new ArrayListProduct(3, "Laptop", 3000000);
+        ArrayListProduct product4 = new ArrayListProduct(4, "Bàn phím", 1500000);
         productList.add(product1);
         productList.add(product2);
         productList.add(product3);
@@ -27,7 +27,8 @@ public class ArrayListProductRepository implements IArrayListProductRepository {
     public void updateProduct(int id, ArrayListProduct product) {
         for (int i = 0; i<productList.size(); i++) {
             if (productList.get(i).getId() == id) {
-                productList.set(productList.indexOf(productList.get(i)), product);
+                productList.set(i, product);
+                break;
             } else {
                 System.out.println("Không tìm thấy sản phẩm có id tương ứng");
                 break;
@@ -40,6 +41,7 @@ public class ArrayListProductRepository implements IArrayListProductRepository {
         for (int i = 0; i<productList.size(); i++) {
             if (productList.get(i).getId() == id) {
                 productList.remove(productList.get(i));
+                break;
             } else {
                 System.out.println("Không tìm thấy sản phẩm có id tương ứng");
                 break;
@@ -56,11 +58,12 @@ public class ArrayListProductRepository implements IArrayListProductRepository {
 
     @Override
     public void searchProduct(String name) {
-        for (ArrayListProduct product : productList) {
-            if (product.getName().equals(name)) {
-                System.out.println(product);
+        for (int i = 0; i<productList.size(); i++) {
+            if (productList.get(i).getName().contains(name)) {
+                System.out.println(productList.get(i));
+                break;
             } else {
-                System.out.println("Không tìm thấy sản phẩm có tên tương ứng");
+                System.out.println("Không tìm thấy sản phẩm có tên vừa nhập");
                 break;
             }
         }

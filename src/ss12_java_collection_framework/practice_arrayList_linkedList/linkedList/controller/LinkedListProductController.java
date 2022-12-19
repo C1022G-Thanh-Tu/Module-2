@@ -1,13 +1,13 @@
 package ss12_java_collection_framework.practice_arrayList_linkedList.linkedList.controller;
 
 import ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.model.model.ArrayListProduct;
-import ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.model.service.IArrayListProductManagerService;
-import ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.model.service.ArrayListProductManagerService;
+import ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.model.service.IArrayListProductService;
+import ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.model.service.ArrayListProductService;
 
 import java.util.Scanner;
 
 public class LinkedListProductController {
-    private static final IArrayListProductManagerService productService = new ArrayListProductManagerService();
+    private static final IArrayListProductService productService = new ArrayListProductService();
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         do {
