@@ -15,18 +15,16 @@ public class AlgorithmComplexityTest {
                 myTreeMap.put(str.charAt(i)+"", 1);
             }
         }
-
-//        Set<Map.Entry<String, Integer>> entrySet = myTreeMap.entrySet();
-//        List<Map.Entry<String, Integer>> entryList = new ArrayList<>(entrySet);
-//
-//        String character = entryList.get(0).getKey();
-//        int max = entryList.get(0).getValue();
-//        for (int i = 0; i < entryList.size(); i++) {
-//            if (entryList.get(i).getValue() > max) {
-//                max = entryList.get(i).getValue();
-//                character = entryList.get(i).getKey();
-//            }
-//        }
-//        System.out.println("Ký tự: "+ character + " có số lần xuất hiện nhiều nhất trong chuỗi: " + max);
+        int max = -1;
+        String character = "";
+        for (Map.Entry<String, Integer> entry : myTreeMap.entrySet()) {
+            for (int i = 0; i < myTreeMap.size() ; i++) {
+                if (max < entry.getValue()) {
+                    max = entry.getValue();
+                    character = entry.getKey();
+                }
+            }
+        }
+        System.out.println("Ký tự xuất hiện nhiều nhất trong mảng là: " + character + "\nCó số lần xuất hiện là: " + max);
     }
 }
