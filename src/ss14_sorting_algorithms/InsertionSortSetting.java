@@ -1,6 +1,7 @@
 package ss14_sorting_algorithms;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class InsertionSortSetting {
     public static int[] insertionSort(int[] arr) {
@@ -15,7 +16,14 @@ public class InsertionSortSetting {
         return arr;
     }
     public static void main(String[] args) {
-        int[] array = {4,2,8,19,12,56,89};
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Nhập số lượng phần tử của mảng: ");
+        int length = Integer.parseInt(scanner.nextLine());
+        int[] array = new int[length];
+        for (int i = 0; i < length; i++) {
+            System.out.print("Nhập phần tử arr["+i+"]: ");
+            array[i] = Integer.parseInt(scanner.nextLine());
+        }
         System.out.println(Arrays.toString(insertionSort(array)));
     }
 }
