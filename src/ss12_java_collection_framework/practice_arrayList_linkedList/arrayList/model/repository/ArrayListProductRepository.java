@@ -44,16 +44,13 @@ public class ArrayListProductRepository implements IArrayListProductRepository {
     }
 
     @Override
-    public void removeProduct(int id) {
+    public boolean removeProduct(ArrayListProduct product) {
         for (int i = 0; i<productList.size(); i++) {
-            if (productList.get(i).getId() == id) {
-                productList.remove(productList.get(i));
-                break;
-            } else {
-                System.out.println("Không tìm thấy sản phẩm có id tương ứng");
-                break;
+            if (productList.get(i).getId() == product.getId()) {
+               return productList.remove(product);
             }
         }
+        return false;
     }
 
     @Override
@@ -64,16 +61,13 @@ public class ArrayListProductRepository implements IArrayListProductRepository {
     }
 
     @Override
-    public void searchProduct(String name) {
-        for (int i = 0; i<productList.size(); i++) {
-            if (productList.get(i).getName().contains(name)) {
-                System.out.println(productList.get(i));
-                break;
-            } else {
-                System.out.println("Không tìm thấy sản phẩm có tên vừa nhập");
-                break;
+    public ArrayListProduct searchProduct(String name) {
+        for (ArrayListProduct product : productList) {
+            if (product.getName().contains(name)) {
+                return product;
             }
         }
+        return null;
     }
 
     @Override

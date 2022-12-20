@@ -14,7 +14,7 @@ public class ArrayListProductController {
             System.out.println("-----Product Manager-------");
             System.out.println("1. Thêm sản phẩm");
             System.out.println("2. Điều chỉnh sản phẩm theo id");
-            System.out.println("3. Xóa sản phẩm");
+            System.out.println("3. Xóa sản phẩm theo id");
             System.out.println("4. Lấy danh sách sản phẩm");
             System.out.println("5. Tìm sản phẩm theo tên");
             System.out.println("6. Sắp xếp sản phẩm theo thứ tự giá tăng dần");
@@ -51,7 +51,12 @@ public class ArrayListProductController {
                 case 3:
                     System.out.print("Nhập id sản phẩm cần xóa: ");
                     id = Integer.parseInt(scanner.nextLine());
-                    productService.removeProduct(id);
+                    ArrayListProduct product1 = productService.findById(id);
+                    if (product1!=null) {
+                        System.out.println(productService.removeProduct(product1));
+                    } else {
+                        System.out.println("Không tìm thấy id tương ứng");
+                    }
                     break;
                 case 4:
                     productService.listProduct();
@@ -59,7 +64,11 @@ public class ArrayListProductController {
                 case 5:
                     System.out.print("Nhập tên sản phẩm: ");
                     name = scanner.nextLine();
-                    productService.searchProduct(name);
+                    if (productService.searchProduct(name) != null) {
+                        System.out.println(productService.searchProduct(name));
+                    } else {
+                        System.out.println("Không tìm thấy sản phẩm có tên tương ứng");
+                    }
                     break;
                 case 6:
                     productService.sortAscendingOrder();

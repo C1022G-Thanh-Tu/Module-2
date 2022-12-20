@@ -18,8 +18,8 @@ public class ArrayListProductService implements IArrayListProductService {
     }
 
     @Override
-    public void removeProduct(int id) {
-        repository.removeProduct(id);
+    public boolean removeProduct(ArrayListProduct product) {
+        return repository.removeProduct(product);
     }
 
     @Override
@@ -28,8 +28,8 @@ public class ArrayListProductService implements IArrayListProductService {
     }
 
     @Override
-    public void searchProduct(String name) {
-        repository.searchProduct(name);
+    public ArrayListProduct searchProduct(String name) {
+        return repository.searchProduct(name);
     }
 
     @Override

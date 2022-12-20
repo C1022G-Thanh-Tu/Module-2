@@ -6,9 +6,9 @@ import ss12_java_collection_framework.practice_arrayList_linkedList.arrayList.mo
 public interface IArrayListProductRepository {
     void addProduct(ArrayListProduct product);
     ArrayListProduct updateProduct(ArrayListProduct product);
-    void removeProduct(int id);
+    boolean removeProduct(ArrayListProduct product);
     void listProduct();
-    void searchProduct(String name);
+    ArrayListProduct searchProduct(String name);
     void sortAscendingOrder();
     void sortDescendingOrder();
     ArrayListProduct findById(int id);
