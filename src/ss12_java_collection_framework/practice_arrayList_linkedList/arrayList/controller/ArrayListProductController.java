@@ -49,7 +49,7 @@ public class ArrayListProductController {
                     }
                     break;
                 case 3:
-                    System.out.print("Nhập id: ");
+                    System.out.print("Nhập id sản phẩm cần xóa: ");
                     id = Integer.parseInt(scanner.nextLine());
                     productService.removeProduct(id);
                     break;
