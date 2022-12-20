@@ -13,8 +13,8 @@ public class ArrayListProductService implements IArrayListProductService {
     }
 
     @Override
-    public void updateProduct(int id, ArrayListProduct product) {
-        repository.updateProduct(id, product);
+    public ArrayListProduct updateProduct(ArrayListProduct product) {
+        return repository.updateProduct(product);
     }
 
     @Override
@@ -40,5 +40,10 @@ public class ArrayListProductService implements IArrayListProductService {
     @Override
     public void sortDescendingOrder() {
         repository.sortDescendingOrder();
+    }
+
+    @Override
+    public ArrayListProduct findById(int id) {
+        return repository.findById(id);
     }
 }

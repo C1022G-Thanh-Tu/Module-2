@@ -35,11 +35,18 @@ public class ArrayListProductController {
                 case 2:
                     System.out.print("Nhập id cần sửa: ");
                     int idNeedFixed = Integer.parseInt(scanner.nextLine());
-                    System.out.print("Nhập giá mới: ");
-                    price = Integer.parseInt(scanner.nextLine());
-                    System.out.print("Nhập tên sản phẩm mới: ");
-                    name = scanner.nextLine();
-                    productService.updateProduct(idNeedFixed, new ArrayListProduct(idNeedFixed, name, price));
+                    ArrayListProduct product = productService.findById(idNeedFixed);
+                    if (product != null) {
+                        System.out.print("Nhập giá mới: ");
+                        int newPrice = Integer.parseInt(scanner.nextLine());
+                        System.out.print("Nhập tên sản phẩm mới: ");
+                        String newName = scanner.nextLine();
+                        product.setName(newName);
+                        product.setPrice(newPrice);
+                        productService.updateProduct(product);
+                    } else {
+                        System.out.println("Không tìm thấy sản phẩm có id tương ứng");
+                    }
                     break;
                 case 3:
                     System.out.print("Nhập id: ");
@@ -64,7 +71,7 @@ public class ArrayListProductController {
                     System.exit(0);
                     break;
                 default:
-                    System.out.println("Hãy lựa chọn dịch vụ có trong menu");
+                    System.err.println("Hãy lựa chọn dịch vụ có trong menu");
                     break;
             }
         } while (true);

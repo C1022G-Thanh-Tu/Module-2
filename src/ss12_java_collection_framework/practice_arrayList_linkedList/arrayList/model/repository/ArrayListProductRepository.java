@@ -24,16 +24,23 @@ public class ArrayListProductRepository implements IArrayListProductRepository {
     }
 
     @Override
-    public void updateProduct(int id, ArrayListProduct product) {
+    public ArrayListProduct updateProduct(ArrayListProduct product) {
         for (int i = 0; i<productList.size(); i++) {
-            if (productList.get(i).getId() == id) {
-                productList.set(i, product);
-                break;
-            } else {
-                System.out.println("Không tìm thấy sản phẩm có id tương ứng");
-                break;
+            if (productList.get(i).getId() == product.getId()) {
+                return productList.set(i, product);
             }
         }
+        return null;
+    }
+
+    @Override
+    public ArrayListProduct findById(int id) {
+        for (int i = 0; i < productList.size(); i++) {
+            if (productList.get(i).getId() == id) {
+                return productList.get(i);
+            }
+        }
+        return null;
     }
 
     @Override
