@@ -47,7 +47,7 @@ public class ArrayListProductRepository implements IArrayListProductRepository {
     public boolean removeProduct(ArrayListProduct product) {
         for (int i = 0; i<productList.size(); i++) {
             if (productList.get(i).getId() == product.getId()) {
-               return productList.remove(product);
+               return productList.remove(productList.get(i));
             }
         }
         return false;
