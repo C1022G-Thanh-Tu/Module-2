@@ -6,7 +6,7 @@ public class IllegalTriangleExceptionCheck {
             if (a>0 && b>0 && c>0 && a+b>c && a+c>b && b+c>a) {
                 System.out.println("Các cạnh vừa nhập là cạnh tam giác");
             } else {
-                throw new IllegalTriangleException();
+                throw new IllegalTriangleException("IllegalTriangle Exception");
             }
         } catch (IllegalTriangleException e) {
             System.out.println("Các cạnh vừa nhập không phải là cạnh tam giác");
