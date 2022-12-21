@@ -1,14 +1,14 @@
 package demo;
 
-public class Product implements Comparable<Product>{
+public class Demo implements Comparable<Demo>{
     private int id;
     private int price;
     private String name;
 
-    public Product() {
+    public Demo() {
     }
 
-    public Product(int id, int price, String name) {
+    public Demo(int id, int price, String name) {
         this.id = id;
         this.price = price;
         this.name = name;
@@ -48,7 +48,7 @@ public class Product implements Comparable<Product>{
     }
 
     @Override
-    public int compareTo(Product o) {
+    public int compareTo(Demo o) {
         return - this.id + o.getId();
     }
 }

@@ -1,4 +1,4 @@
-package ss5_access_modifier_static_method_static_property.circle;
+package ss5_access_modifier_static_method_static_property.access_modifier1;
 
 public class Circle {
     private double radius = 1.0;
