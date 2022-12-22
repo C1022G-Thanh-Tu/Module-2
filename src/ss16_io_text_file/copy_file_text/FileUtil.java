@@ -8,12 +8,10 @@ public class FileUtil {
     public static final String FILE_NAME1 = "D:\\CODEGYM\\Module2\\C1022G1\\src\\ss16_io_text_file\\copy_file_text\\source_file.csv";
     public static final String FILE_NAME2 = "D:\\CODEGYM\\Module2\\C1022G1\\src\\ss16_io_text_file\\copy_file_text\\target_file.csv";
 
-    public static List<String> readAndWriteCSV() {
+    public static List<String> readCSV() {
         List<String> listArr = new ArrayList<>();
         FileReader fileReader = null;
         BufferedReader bufferedReader = null;
-        String line;
-        int count = 0;
 
         try {
             fileReader = new FileReader(FILE_NAME1);
@@ -23,6 +21,8 @@ public class FileUtil {
             e.printStackTrace();
         }
 
+        String line;
+        int count = 0;
         try {
             while ((line = bufferedReader.readLine()) != null) {
                 listArr.add(line);
@@ -42,7 +42,7 @@ public class FileUtil {
     }
 
     public static void main(String[] args) {
-        List<String> stringList = readAndWriteCSV();
+        List<String> stringList = readCSV();
         FileWriter fileWriter = null;
         BufferedWriter bufferedWriter = null;
         try {
