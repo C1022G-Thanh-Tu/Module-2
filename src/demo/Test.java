@@ -1,31 +1,41 @@
 package demo;
 
-import java.io.CharArrayReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Test {
-    public static void main(String [] args) {
-        String obj  = "abcdefgh";
-        int length = obj.length();
-        char c[] = new char[length];
-        obj.getChars(0, length, c, 0);
-        CharArrayReader input1 = new CharArrayReader(c);
-        CharArrayReader input2 = new CharArrayReader(c, 1, 4);
-        int i;
-        int j;
-        try
-        {
-            while((i = input1.read()) == (j = input2.read()))
-            {
-                System.out.print((char)i);
-            }
+
+    public static final String FILE_NAME = "D:\\CODEGYM\\Module2\\C1022G1\\src\\demo\\Demo.csv";
+
+    public static List<Demo> readCSV() throws IOException {
+        List<Demo> demoList = new ArrayList<>();
+        FileReader fileReader = new FileReader(FILE_NAME);
+        BufferedReader bufferedReader = new BufferedReader(fileReader);
+        String line;
+        String[] temp;
+        Demo demo;
+        while ((line = bufferedReader.readLine()) != null) {
+            temp = line.split(",");
+            int id = Integer.parseInt(temp[0]);
+            String name = temp[1];
+            demo = new Demo(id, name);
+            demoList.add(demo);
         }
-        catch (IOException e)
-        {
-            e.printStackTrace();
-        }
+        return demoList;
+    }
+    public static void writeCSV(Demo demo) throws IOException {
+        FileWriter fileWriter = new FileWriter(FILE_NAME, true);
+        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+        bufferedWriter.write("\n" + demo.getId() + "," + demo.getName());
+        bufferedWriter.close();
+    }
+    public static void main(String [] args) throws IOException {
+//        List<Demo> demoList = readCSV();
+//        for (Demo demo : demoList) {
+//            System.out.println(demo);
+//        }
+        writeCSV(new Demo(4, "d"));
     }
 }
