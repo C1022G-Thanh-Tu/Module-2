@@ -20,6 +20,7 @@ public class FileUtil {
         }
 
         int character = 0;
+        String line;
         int count = 0;
         FileWriter fileWriter = null;
         BufferedWriter bufferedWriter = null;
@@ -30,9 +31,10 @@ public class FileUtil {
             e.printStackTrace();
         }
         try {
-            while ((character = bufferedReader1.read()) != -1) {
-                bufferedWriter.write(character);
-                count++;
+            while ((line = bufferedReader1.readLine()) != null) {
+                bufferedWriter.write(line);
+                bufferedWriter.newLine();
+                count+=line.length();
             }
             bufferedWriter.flush();
             System.out.println("Số các ký tự đã sao chép là: " + count);
