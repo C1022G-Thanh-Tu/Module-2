@@ -12,8 +12,7 @@ public class FileUtil {
         int character = 0;
         String line;
         int count = 0;
-        FileWriter fileWriter = null;
-        BufferedWriter bufferedWriter = null;
+
         try {
             fileReader = new FileReader(FILE_NAME1);
             bufferedReader = new BufferedReader(fileReader);
@@ -22,6 +21,8 @@ public class FileUtil {
             e.printStackTrace();
         }
 
+        FileWriter fileWriter = null;
+        BufferedWriter bufferedWriter = null;
         try {
             fileWriter = new FileWriter(FILE_NAME2);
             bufferedWriter = new BufferedWriter(fileWriter);
