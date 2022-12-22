@@ -1,7 +1,6 @@
 package ss16_io_text_file.copy_file_text;
 
 import java.io.*;
-import java.util.List;
 
 public class FileUtil {
     public static final String FILE_NAME1 = "D:\\CODEGYM\\Module2\\C1022G1\\src\\ss16_io_text_file\\copy_file_text\\source_file.csv";
@@ -9,21 +8,20 @@ public class FileUtil {
 
     public static void readAndWriteCSV() {
         FileReader fileReader = null;
-        BufferedReader bufferedReader1 = null;
-
-        try {
-            fileReader = new FileReader(FILE_NAME1);
-            bufferedReader1 = new BufferedReader(fileReader);
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
+        BufferedReader bufferedReader = null;
         int character = 0;
         String line;
         int count = 0;
         FileWriter fileWriter = null;
         BufferedWriter bufferedWriter = null;
+        try {
+            fileReader = new FileReader(FILE_NAME1);
+            bufferedReader = new BufferedReader(fileReader);
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
         try {
             fileWriter = new FileWriter(FILE_NAME2);
             bufferedWriter = new BufferedWriter(fileWriter);
@@ -31,7 +29,7 @@ public class FileUtil {
             e.printStackTrace();
         }
         try {
-            while ((line = bufferedReader1.readLine()) != null) {
+            while ((line = bufferedReader.readLine()) != null) {
                 bufferedWriter.write(line);
                 bufferedWriter.newLine();
                 count+=line.length();
@@ -42,7 +40,7 @@ public class FileUtil {
             e.printStackTrace();
         } finally {
             try {
-                bufferedReader1.close();
+                bufferedReader.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
