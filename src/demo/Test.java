@@ -1,17 +1,31 @@
 package demo;
 
+import java.io.CharArrayReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Test {
     public static void main(String [] args) {
-        try {
-            int x = 0;
-            int y = 5 / x;
-        }catch (ArithmeticException e) {
-            System.out.println("Arithmetic");
-        }catch (Exception ae) {
-            System.out.println("Exception");
+        String obj  = "abcdefgh";
+        int length = obj.length();
+        char c[] = new char[length];
+        obj.getChars(0, length, c, 0);
+        CharArrayReader input1 = new CharArrayReader(c);
+        CharArrayReader input2 = new CharArrayReader(c, 1, 4);
+        int i;
+        int j;
+        try
+        {
+            while((i = input1.read()) == (j = input2.read()))
+            {
+                System.out.print((char)i);
+            }
         }
-        System.out.println("finished");
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
     }
 }

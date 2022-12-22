@@ -10,6 +10,8 @@ public class IllegalTriangleExceptionCheck {
             }
         } catch (IllegalTriangleException e) {
             System.out.println("Các cạnh vừa nhập không phải là cạnh tam giác");
+        } catch (NumberFormatException e) {
+            System.out.println("Hãy nhập số");
         } finally {
             System.out.println("Kết thúc kiểm tra thông số vừa nhập");
         }
