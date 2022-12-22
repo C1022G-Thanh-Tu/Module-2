@@ -9,7 +9,6 @@ public class FileUtil {
     public static void readAndWriteCSV() {
         FileReader fileReader = null;
         BufferedReader bufferedReader = null;
-        int character = 0;
         String line;
         int count = 0;
 
@@ -29,6 +28,7 @@ public class FileUtil {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         try {
             while ((line = bufferedReader.readLine()) != null) {
                 bufferedWriter.write(line);
