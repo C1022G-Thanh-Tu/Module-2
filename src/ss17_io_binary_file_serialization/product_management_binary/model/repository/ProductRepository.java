@@ -19,7 +19,7 @@ public class ProductRepository implements IProductRepository {
             e.printStackTrace();
         }
         try {
-             objectOutputStream = new ObjectOutputStream(fileOutputStream);
+            objectOutputStream = new ObjectOutputStream(fileOutputStream);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -45,7 +45,7 @@ public class ProductRepository implements IProductRepository {
             e.printStackTrace();
         }
         try {
-             objectInputStream = new ObjectInputStream(fileInputStream);
+            objectInputStream = new ObjectInputStream(fileInputStream);
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -1,15 +1,17 @@
-package ss17_io_binary_file_serialization.product_management_binary.controller;
+package demo_mvc.controller;
 
-import ss17_io_binary_file_serialization.product_management_binary.model.model.Product;
-import ss17_io_binary_file_serialization.product_management_binary.model.service.IProductService;
-import ss17_io_binary_file_serialization.product_management_binary.model.service.ProductService;
-
+import demo_mvc.model.model.Product;
+import demo_mvc.model.service.IProductService;
+import demo_mvc.model.service.ProductService;
 import java.util.Scanner;
 
 public class ProductController {
     public static void main(String[] args)  {
         IProductService productService = new ProductService();
+        productService.create();
         Scanner scanner = new Scanner(System.in);
+//        System.out.print("Hãy nhập link file cần truy cập: ");
+//        final String FILE_NAME = scanner.nextLine();
         do {
             System.out.println("-----Product Manager-------");
             System.out.println("1. Thêm sản phẩm");;
@@ -60,7 +62,7 @@ public class ProductController {
                     productService.add(product);
                     break;
                 case 2:
-                    productService.display();
+
                     break;
                 case 3:
                     System.out.print("Nhập tên sản phẩm cần tìm: ");
