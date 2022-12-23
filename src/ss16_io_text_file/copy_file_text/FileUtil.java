@@ -64,17 +64,21 @@ public class FileUtil {
     }
 
     public static void main(String[] args) {
-        try {
-            Scanner scanner = new Scanner(System.in);
-            System.out.print("Nhập link file cần đọc: ");
-            final String FILE_PATH1 = scanner.nextLine();
-            System.out.print("Nhập link file cần viết: ");
-            final String FILE_PATH2 = scanner.nextLine();
-            List<String> stringList = readCSV(FILE_PATH1);
-            writeCSV(stringList, FILE_PATH2);
-        } catch (IOException e) {
-            System.out.println("Nhập sai đường link");
-        }
-
+        boolean flag = true;
+        do {
+            try {
+                Scanner scanner = new Scanner(System.in);
+                System.out.print("Nhập link file cần đọc: ");
+                final String FILE_PATH1 = scanner.nextLine();
+                System.out.print("Nhập link file cần viết: ");
+                final String FILE_PATH2 = scanner.nextLine();
+                List<String> stringList = readCSV(FILE_PATH1);
+                writeCSV(stringList, FILE_PATH2);
+                flag = false;
+            } catch (IOException e) {
+                System.out.println("\nNhập sai đường link\nVui lòng nhập lại\n");
+                flag = true;
+            }
+        } while (flag);
     }
 }
