@@ -6,19 +6,15 @@ import java.util.List;
 import java.util.Scanner;
 
 public class FileUtil {
-    public static List<String> readCSV() {
+    public static List<String> readCSV(final String FILE_NAME1) throws IOException {
         List<String> listArr = new ArrayList<>();
         FileReader fileReader = null;
         BufferedReader bufferedReader = null;
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Hãy nhập file cần đọc: ");
-        final String FILE_NAME1 = scanner.nextLine();
         try {
             fileReader = new FileReader(FILE_NAME1);
             bufferedReader = new BufferedReader(fileReader);
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+        } catch (IOException e) {
+            throw new IOException(e);
         }
 
         String line;
@@ -41,12 +37,9 @@ public class FileUtil {
         return listArr;
     }
 
-    public static void writeCSV(List<String> stringList) {
+    public static void writeCSV(List<String> stringList, final String FILE_NAME2) throws IOException {
         FileWriter fileWriter = null;
         BufferedWriter bufferedWriter = null;
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Hãy nhập file cần viết: ");
-        final String FILE_NAME2 = scanner.nextLine();
         try {
             fileWriter = new FileWriter(FILE_NAME2);
             bufferedWriter = new BufferedWriter(fileWriter);
@@ -60,7 +53,7 @@ public class FileUtil {
             }
             bufferedWriter.flush();
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new IOException(e);
         } finally {
             try {
                 bufferedWriter.close();
@@ -71,7 +64,17 @@ public class FileUtil {
     }
 
     public static void main(String[] args) {
-        List<String> stringList = readCSV();
-        writeCSV(stringList);
+        try {
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Nhập link file cần đọc: ");
+            final String FILE_PATH1 = scanner.nextLine();
+            System.out.print("Nhập link file cần viết: ");
+            final String FILE_PATH2 = scanner.nextLine();
+            List<String> stringList = readCSV(FILE_PATH1);
+            writeCSV(stringList, FILE_PATH2);
+        } catch (IOException e) {
+            System.out.println("Nhập sai đường link");
+        }
+
     }
 }

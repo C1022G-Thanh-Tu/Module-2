@@ -50,7 +50,7 @@ public class Test {
         for (Demo demo : resultList) {
             System.out.println(demo);
         }
-        writeObject(demo1);
-        System.out.println(readObject());
+//        writeObject(demo1);
+//        System.out.println(readObject());
     }
 }
