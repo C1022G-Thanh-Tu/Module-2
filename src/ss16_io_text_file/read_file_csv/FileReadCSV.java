@@ -25,6 +25,7 @@ public class FileReadCSV {
             nation = new Nation(id,shortName, fullName);
             nationList.add(nation);
         }
+        bufferedReader.close();
         return nationList;
     }
 
