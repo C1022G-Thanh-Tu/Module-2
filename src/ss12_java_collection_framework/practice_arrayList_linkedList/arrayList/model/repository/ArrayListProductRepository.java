@@ -35,9 +35,9 @@ public class ArrayListProductRepository implements IArrayListProductRepository {
 
     @Override
     public ArrayListProduct findById(int id) {
-        for (int i = 0; i < productList.size(); i++) {
-            if (productList.get(i).getId() == id) {
-                return productList.get(i);
+        for (ArrayListProduct product : productList) {
+            if (product.getId() == id) {
+                return product;
             }
         }
         return null;

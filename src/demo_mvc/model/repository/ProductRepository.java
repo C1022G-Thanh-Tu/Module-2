@@ -14,6 +14,9 @@ public class ProductRepository implements IProductRepository{
     static List<Product> productList = new ArrayList<>();
     static {
         productList.add(new Product(1, "Máy ảnh", "Trung Quốc", 1000000));
+        productList.add(new Product(2, "Điện thoại", "Nhật Bản", 950000));
+        productList.add(new Product(3, "Laptop", "Pháp", 25000000));
+        productList.add(new Product(4, "Tai nghe", "Mỹ", 190000));
     }
     @Override
     public void create() {
@@ -33,8 +36,6 @@ public class ProductRepository implements IProductRepository{
         for (Product product : resultList) {
             System.out.println(product);
         }
-        objectListWriter.writeObjectList(resultList, FILE_NAME);
-
     }
 
     @Override
@@ -45,7 +46,6 @@ public class ProductRepository implements IProductRepository{
                 return product;
             }
         }
-        objectListWriter.writeObjectList(resultList, FILE_NAME);
         return null;
     }
 }

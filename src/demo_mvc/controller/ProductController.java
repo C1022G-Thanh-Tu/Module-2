@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class ProductController {
     public static void main(String[] args)  {
         IProductService productService = new ProductService();
-        productService.create();
+
         Scanner scanner = new Scanner(System.in);
 //        System.out.print("Hãy nhập link file cần truy cập: ");
 //        final String FILE_NAME = scanner.nextLine();
@@ -31,6 +31,9 @@ public class ProductController {
                 }
             } while (flag);
             switch (choice) {
+                case 0:
+                    productService.create();
+                    break;
                 case 1:
                     int id = 0;
                     do {
@@ -62,7 +65,7 @@ public class ProductController {
                     productService.add(product);
                     break;
                 case 2:
-
+                    productService.display();
                     break;
                 case 3:
                     System.out.print("Nhập tên sản phẩm cần tìm: ");
