@@ -24,7 +24,7 @@ public class FacilityController {
             switch (choiceFacilityService) {
                 case 1:
                     int choiceDisplayFacilityList;
-                    System.out.println("---Danh sách dịch vụ----\n" +
+                    System.out.println("---Danh sách dịch vụ cơ sở vật chất----\n" +
                             "1. Room\n" +
                             "2. Villa\n" +
                             "3. Thoát");
@@ -42,7 +42,7 @@ public class FacilityController {
                 case 2:
                     int choiceAddNewFacility;
                     do {
-                        System.out.println("---Danh sách dịch vụ----\n" +
+                        System.out.println("---Danh sách dịch vụ cơ sở vật chất----\n" +
                                 "1. Room\n" +
                                 "2. Villa");
                         System.out.print("Hãy chọn loại dịch vụ bạn muốn thêm: ");
@@ -122,11 +122,11 @@ public class FacilityController {
                 case 3:
                     int choiceFacilityMaintenance;
                     do {
-                        System.out.println("----Danh sách các dịch vụ phòng cần bảo trì----\n" +
+                        System.out.println("----Danh sách các dịch vụ cơ sở vật chất cần bảo trì----\n" +
                                 "1. Room\n" +
                                 "2. Villa\n" +
                                 "3. Thoát");
-                        System.out.print("Hãy chọn xem danh sách cần bảo trì của dịch vụ: ");
+                        System.out.print("Hãy chọn xem danh sách cần bảo trì của dịch vụ tương ứng: ");
                         choiceFacilityMaintenance = Integer.parseInt(scanner.nextLine());
                         switch (choiceFacilityMaintenance) {
                             case 1:
