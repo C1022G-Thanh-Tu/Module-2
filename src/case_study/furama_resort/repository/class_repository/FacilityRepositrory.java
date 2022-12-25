@@ -5,6 +5,7 @@ import case_study.furama_resort.model.facility.Villa;
 import case_study.furama_resort.repository.interface_repository.IBookingRepository;
 import case_study.furama_resort.repository.interface_repository.IFacilityRepository;
 
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -65,17 +66,23 @@ public class FacilityRepositrory implements IFacilityRepository {
         for (Map.Entry<Object, Integer> entry : availableRoomList.entrySet()) {
             if (entry.getValue() >= 5) {
                 maintenanceRoomList.put(entry.getKey(), entry.getValue());
-                availableRoomList.remove(entry);
+//                availableRoomList.remove(entry);
             }
         }
     }
 
     @Override
     public void createListVillaMaintenance() {
-        for (Map.Entry<Object, Integer> entry : availableVillaList.entrySet()) {
-            if (entry.getValue() >= 5) {
-                maintenanceVillaList.put(entry.getKey(), entry.getValue());
-                availableVillaList.remove(entry);
+//        for (Map.Entry<Object, Integer> entry : availableVillaList.entrySet()) {
+//            if (entry.getValue() >= 5) {
+//                maintenanceVillaList.put(entry.getKey(), entry.getValue());
+//                availableVillaList.remove(entry);
+//            }
+//        }
+        for (Object key : availableVillaList.keySet()) {
+            if (availableVillaList.get(key) >= 5) {
+                maintenanceVillaList.put(key, availableVillaList.get(key));
+//                availableVillaList.remove(key);
             }
         }
     }
@@ -96,9 +103,10 @@ public class FacilityRepositrory implements IFacilityRepository {
 
     @Override
     public void displayVillaList() {
-        System.out.println("-----Danh sách villa đang có sẵn----");
         for (Map.Entry<Object, Integer> villaEntry : availableVillaList.entrySet()) {
-            System.out.println(villaEntry.getKey() + ": " + villaEntry.getValue() + " lần sử dụng");
+            if (villaEntry.getValue() <5) {
+                System.out.println(villaEntry.getKey() + ": " + villaEntry.getValue() + " lần sử dụng");
+            }
         }
     }
 
@@ -122,9 +130,10 @@ public class FacilityRepositrory implements IFacilityRepository {
 
     @Override
     public void display() {
-        System.out.println("-----Danh sách room đang có sẵn----");
         for (Map.Entry<Object, Integer> roomEntry : availableRoomList.entrySet()) {
-            System.out.println(roomEntry.getKey() + ": " + roomEntry.getValue() + " lần sử dụng");
+            if (roomEntry.getValue() < 5) {
+                System.out.println(roomEntry.getKey() + ": " + roomEntry.getValue() + " lần sử dụng");
+            }
         }
     }
 

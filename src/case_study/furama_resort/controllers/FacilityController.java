@@ -44,7 +44,8 @@ public class FacilityController {
                     do {
                         System.out.println("---Danh sách dịch vụ cơ sở vật chất----\n" +
                                 "1. Room\n" +
-                                "2. Villa");
+                                "2. Villa\n" +
+                                "3. Thoát");
                         System.out.print("Hãy chọn loại dịch vụ bạn muốn thêm: ");
                         choiceAddNewFacility = Integer.parseInt(scanner.nextLine());
                         switch (choiceAddNewFacility) {
@@ -139,7 +140,6 @@ public class FacilityController {
                                 break;
                         }
                     } while (choiceFacilityMaintenance != 3);
-
                     break;
                 case 4:
                     flag = false;

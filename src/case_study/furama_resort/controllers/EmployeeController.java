@@ -188,7 +188,7 @@ public class EmployeeController {
                                     employee1.setAcademicLevel(newAcademicLevel);
                                     break;
                                 case 8:
-                                    System.out.print("Hãy nhập vị trí mới: ");
+                                    System.out.println("Hãy tạo vị trí mới");
                                     System.out.println("----Các vị trí công việc----\n" +
                                             "1. Lễ tân\n" +
                                             "2. Phục vụ\n" +
@@ -198,8 +198,8 @@ public class EmployeeController {
                                             "6. Giám đốc");
                                     System.out.print("Chọn loại trình độ học vấn: ");
                                     String newWorkingPosition = "";
-                                    int choiceWoringPosition = Integer.parseInt(scanner.nextLine());
-                                    switch (choiceWoringPosition) {
+                                    int choiceWorkingPosition = Integer.parseInt(scanner.nextLine());
+                                    switch (choiceWorkingPosition) {
                                         case 1:
                                             newWorkingPosition = "Lễ tân";
                                             break;
