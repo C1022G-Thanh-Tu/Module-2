@@ -7,10 +7,11 @@ import case_study.furama_resort.services.interface_service.ICustomerService;
 import java.util.Scanner;
 
 public class CustomerController {
-    public void customerControl() {
+    public void controlCustomer() {
         ICustomerService service = new CustomerService();
         Scanner scanner = new Scanner(System.in);
-        int choiceCustomerService = 0;
+        int choiceCustomerService;
+        boolean flag = true;
         do {
             System.out.println("---Customer Management---\n"
                     + "1. Display list customers\n"
@@ -38,9 +39,34 @@ public class CustomerController {
                     String newCustomerEmail = scanner.nextLine();
                     System.out.print("Hãy nhập id của khách hàng mới: ");
                     int newCustomerId = Integer.parseInt(scanner.nextLine());
-                    System.out.print("Hãy nhập loại của khách hàng mới: ");
-                    String newCustomerType = scanner.nextLine();
-                    System.out.print("Hãy địa chỉ của khách hàng mới: ");
+                    System.out.println("Hãy tạo loại của khách hàng mới");
+                    System.out.println("----Loại khách hàng----\n" +
+                            "1. Diamond\n" +
+                            "2. Platinium\n" +
+                            "3. Gold\n" +
+                            "4. Silver\n" +
+                            "5. Member");
+                    System.out.print("Chọn loại khách hàng: ");
+                    String newCustomerType = "";
+                    int choiceCustomerType = Integer.parseInt(scanner.nextLine());
+                    switch (choiceCustomerType) {
+                        case 1:
+                            newCustomerType = "Diamond";
+                            break;
+                        case 2:
+                            newCustomerType = "Platinium";
+                            break;
+                        case 3:
+                            newCustomerType = "Gold";
+                            break;
+                        case 4:
+                            newCustomerType = "Silver";
+                            break;
+                        case 5:
+                            newCustomerType = "Member";
+                            break;
+                    }
+                    System.out.print("Hãy nhập địa chỉ của khách hàng mới: ");
                     String newCustomerAddress = scanner.nextLine();
                     service.add(new Customer(newCustomerFullName, newCustomerDateOfBirth, newCustomerGender,
                             newCustomerIdentityNumber, newCustomerPhoneNumber, newCustomerEmail, newCustomerId, newCustomerType,
@@ -51,7 +77,7 @@ public class CustomerController {
                     int id = Integer.parseInt(scanner.nextLine());
                     Customer customer = service.findById(id);
                     if (customer != null) {
-                        int choiceEditCustomer = 0;
+                        int choiceEditCustomer;
                         do {
                             System.out.println("---Các thông tin có thể sửa---\n" +
                                     "1. Tên\n" +
@@ -61,7 +87,8 @@ public class CustomerController {
                                     "5. Số điện thoại\n" +
                                     "6. Email\n" +
                                     "7. Loại Khách hàng\n" +
-                                    "8. Địa chỉ");
+                                    "8. Địa chỉ\n" +
+                                    "9. Thoát chọn");
                             System.out.print("Hãy nhập thông tin bạn muốn sửa: ");
                             choiceEditCustomer = Integer.parseInt(scanner.nextLine());
                             switch (choiceEditCustomer) {
@@ -96,8 +123,33 @@ public class CustomerController {
                                     customer.setEmail(newEmail);
                                     break;
                                 case 7:
-                                    System.out.print("Hãy nhập loại mới của khách hàng: ");
-                                    String newType = scanner.nextLine();
+                                    System.out.println("Hãy tạo loại mới của khách hàng");
+                                    System.out.println("----Loại khách hàng----\n" +
+                                            "1. Diamond\n" +
+                                            "2. Platinium\n" +
+                                            "3. Gold\n" +
+                                            "4. Silver\n" +
+                                            "5. Member");
+                                    System.out.print("Chọn loại mới của khách hàng: ");
+                                    String newType = "";
+                                    int choiceType = Integer.parseInt(scanner.nextLine());
+                                    switch (choiceType) {
+                                        case 1:
+                                            newType = "Diamond";
+                                            break;
+                                        case 2:
+                                            newType = "Platinium";
+                                            break;
+                                        case 3:
+                                            newType = "Gold";
+                                            break;
+                                        case 4:
+                                            newType = "Silver";
+                                            break;
+                                        case 5:
+                                            newType = "Member";
+                                            break;
+                                    }
                                     customer.setCustomerType(newType);
                                     break;
                                 case 8:
@@ -106,9 +158,13 @@ public class CustomerController {
                                     customer.setCustomerAddress(newAddress);
                                     break;
                             }
-                        } while (choiceEditCustomer < 9);
+                        } while (choiceEditCustomer != 9);
                     }
+                    break;
+                case 4:
+                    flag = false;
+                    break;
             }
-        } while (choiceCustomerService < 4);
+        } while (flag);
     }
 }

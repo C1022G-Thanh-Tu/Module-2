@@ -5,7 +5,7 @@ import case_study.furama_resort.repository.class_repository.EmployeeRepositrory;
 import case_study.furama_resort.repository.interface_repository.IEmployeeRepository;
 import case_study.furama_resort.services.interface_service.IEmployeeService;
 
-public class EmployeeService extends MainService implements IEmployeeService {
+public class EmployeeService implements IEmployeeService {
     IEmployeeRepository repository = new EmployeeRepositrory();
     @Override
     public Employee findById(int id) {
