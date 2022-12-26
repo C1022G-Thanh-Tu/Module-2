@@ -5,16 +5,15 @@ import case_study.furama_resort.model.facility.Villa;
 import case_study.furama_resort.repository.interface_repository.IBookingRepository;
 import case_study.furama_resort.repository.interface_repository.IFacilityRepository;
 
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 
 public class FacilityRepositrory implements IFacilityRepository {
     static IBookingRepository bookingRepository = new BookingRepositrory();
-    static Map<Object, Integer> availableRoomList = new LinkedHashMap<>();
-    static Map<Object, Integer> availableVillaList = new LinkedHashMap<>();
-    static Map<Object, Integer> maintenanceRoomList = new LinkedHashMap<>();
-    static Map<Object, Integer> maintenanceVillaList = new LinkedHashMap<>();
+    static Map<Room, Integer> availableRoomList = new LinkedHashMap<>();
+    static Map<Villa, Integer> availableVillaList = new LinkedHashMap<>();
+    static Map<Room, Integer> maintenanceRoomList = new LinkedHashMap<>();
+    static Map<Villa, Integer> maintenanceVillaList = new LinkedHashMap<>();
+
     static {
         Room room1 = new Room("Thuê phòng", 30, 100000, 5,
                 "theo ngày", "ấm nước miễn phí");
@@ -63,7 +62,8 @@ public class FacilityRepositrory implements IFacilityRepository {
 
     @Override
     public void createListRoomMaintenance() {
-        for (Map.Entry<Object, Integer> entry : availableRoomList.entrySet()) {
+
+        for (Map.Entry<Room, Integer> entry : availableRoomList.entrySet()) {
             if (entry.getValue() >= 5) {
                 maintenanceRoomList.put(entry.getKey(), entry.getValue());
 //                availableRoomList.remove(entry);
@@ -73,39 +73,49 @@ public class FacilityRepositrory implements IFacilityRepository {
 
     @Override
     public void createListVillaMaintenance() {
-//        for (Map.Entry<Object, Integer> entry : availableVillaList.entrySet()) {
-//            if (entry.getValue() >= 5) {
-//                maintenanceVillaList.put(entry.getKey(), entry.getValue());
+        for (Map.Entry<Villa, Integer> entry : availableVillaList.entrySet()) {
+            if (entry.getValue() >= 5) {
+                maintenanceVillaList.put(entry.getKey(), entry.getValue());
 //                availableVillaList.remove(entry);
-//            }
-//        }
-        for (Object key : availableVillaList.keySet()) {
-            if (availableVillaList.get(key) >= 5) {
-                maintenanceVillaList.put(key, availableVillaList.get(key));
-//                availableVillaList.remove(key);
             }
         }
+
+//        for (Villa villaKey : availableVillaList.keySet()) {
+//            if (availableVillaList.get(villaKey) >= 5) {
+//                maintenanceVillaList.put(villaKey, availableVillaList.get(villaKey));
+//            }
+//        }
     }
 
     @Override
     public void displayListVillaMaintenance() {
-        for (Map.Entry<Object, Integer> entry : maintenanceVillaList.entrySet()) {
+        for (Map.Entry<Villa, Integer> entry : maintenanceVillaList.entrySet()) {
             System.out.println(entry.getKey() + ": " + entry.getValue() + " lần sử dụng");
         }
     }
 
     @Override
     public void displayListRoomMaintenance() {
-        for (Map.Entry<Object, Integer> entry : maintenanceRoomList.entrySet()) {
+        for (Map.Entry<Room, Integer> entry : maintenanceRoomList.entrySet()) {
             System.out.println(entry.getKey() + ": " + entry.getValue() + " lần sử dụng");
         }
     }
 
     @Override
     public void displayVillaList() {
-        for (Map.Entry<Object, Integer> villaEntry : availableVillaList.entrySet()) {
-            if (villaEntry.getValue() <5) {
+        for (Map.Entry<Villa, Integer> villaEntry : availableVillaList.entrySet()) {
+            if (villaEntry.getValue() < 5) {
                 System.out.println(villaEntry.getKey() + ": " + villaEntry.getValue() + " lần sử dụng");
+            }
+
+        }
+    }
+
+    @Override
+    public void display() {
+        for (Map.Entry<Room, Integer> roomEntry : availableRoomList.entrySet()) {
+            if (roomEntry.getValue() < 5) {
+                System.out.println(roomEntry.getKey() + ": " + roomEntry.getValue() + " lần sử dụng");
             }
         }
     }
@@ -125,15 +135,6 @@ public class FacilityRepositrory implements IFacilityRepository {
             availableVillaList.put(villa, availableVillaList.get(villa) + 1);
         } else {
             availableVillaList.put(villa, 0);
-        }
-    }
-
-    @Override
-    public void display() {
-        for (Map.Entry<Object, Integer> roomEntry : availableRoomList.entrySet()) {
-            if (roomEntry.getValue() < 5) {
-                System.out.println(roomEntry.getKey() + ": " + roomEntry.getValue() + " lần sử dụng");
-            }
         }
     }
 
