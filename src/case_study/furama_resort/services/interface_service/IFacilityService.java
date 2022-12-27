@@ -6,7 +6,6 @@ import case_study.furama_resort.model.facility.Villa;
 public interface IFacilityService extends IMainService {
     void displayListRoomMaintenance();
     void displayVillaList();
-    void addNewRoom(Room room);
     void adNewVilla(Villa villa);
     void createListRoomMaintenance();
     void createListVillaMaintenance();

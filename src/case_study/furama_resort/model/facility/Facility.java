@@ -6,17 +6,19 @@ public abstract class Facility {
     public int rentalCosts;
     public int maximumNumberOfPeople;
     public String rentalType;
+    public String serviceCode;
 
     public Facility() {
     }
 
-    public Facility(String serviceName, int usableArea, int rentalCosts,
-                              int maximumNumberOfPeople, String rentalType) {
+    public Facility(String serviceName, int usableArea, int rentalCosts, int maximumNumberOfPeople,
+                    String rentalType, String serviceCode) {
         this.serviceName = serviceName;
         this.usableArea = usableArea;
         this.rentalCosts = rentalCosts;
         this.maximumNumberOfPeople = maximumNumberOfPeople;
         this.rentalType = rentalType;
+        this.serviceCode = serviceCode;
     }
 
     public String getServiceName() {
@@ -59,14 +61,23 @@ public abstract class Facility {
         this.rentalType = rentalType;
     }
 
+    public String getServiceCode() {
+        return serviceCode;
+    }
+
+    public void setServiceCode(String serviceCode) {
+        this.serviceCode = serviceCode;
+    }
+
     @Override
     public String toString() {
-        return "FacilityController{" +
+        return "Facility{" +
                 "serviceName='" + serviceName + '\'' +
                 ", usableArea=" + usableArea +
                 ", rentalCosts=" + rentalCosts +
                 ", maximumNumberOfPeople=" + maximumNumberOfPeople +
                 ", rentalType='" + rentalType + '\'' +
+                ", serviceCode='" + serviceCode + '\'' +
                 '}';
     }
 }

@@ -33,11 +33,8 @@ public class MainController {
                     facilityController.controlFacility();
                     break;
                 case 4:
-                    System.out.println("---Booking Management---\n"
-                            + "1. Display list booking\n"
-                            + "2. Add new booking\n"
-                            + "3. Return main menu");
-                    System.out.print("Hãy chọn dịch vụ: ");
+//                    BookingController bookingController = new BookingController();
+//                    bookingController.controlBooking();
                     break;
                 case 5:
                     System.out.println("---Promotion Management---\n"

@@ -8,11 +8,15 @@ import case_study.furama_resort.services.interface_service.IFacilityService;
 import java.util.Scanner;
 
 public class FacilityController {
+
+    public static final String ROOM_CODE_REGEX = "^[S][V][R][O][-]\\d{4}$";
+    public static final String VILLA_CODE_REGEX = "^[S][V][V][L][-]\\d{4}$";
+    public static final String SERVICE_NAME_REGEX = "^$";
+
     public void controlFacility() {
         IFacilityService service = new FacilityService();
         Scanner scanner = new Scanner(System.in);
         int choiceFacilityService;
-        boolean flag = true;
         do {
             System.out.println("---Facility Management---\n"
                     + "1. Display list facility\n"
@@ -32,9 +36,11 @@ public class FacilityController {
                     choiceDisplayFacilityList = Integer.parseInt(scanner.nextLine());
                     switch (choiceDisplayFacilityList) {
                         case 1:
+                            service.createListRoomMaintenance();
                             service.display();
                             break;
                         case 2:
+                            service.createListVillaMaintenance();
                             service.displayVillaList();
                             break;
                     }
@@ -75,11 +81,22 @@ public class FacilityController {
                                     case 3:
                                         rentalType = "Theo năm";
                                 }
+                                String serviceCode;
+                                boolean flag = true;
+                                do {
+                                    System.out.print("Nhập mã dịch vụ: ");
+                                    serviceCode = scanner.nextLine();
+                                    if (serviceCode.matches(ROOM_CODE_REGEX)) {
+                                        flag = false;
+                                    } else {
+                                        System.out.println("Hãy nhập đúng cú pháp củ mã dịch vụ phòng");
+                                    }
+                                } while (flag);
                                 System.out.print("Dịch vụ miễn phí kèm theo: ");
                                 String freeService = scanner.nextLine();
                                 Room room = new Room(nameRoomService, usableArea, rentalCosts, maximumNumberOfPeople,
-                                        rentalType, freeService);
-                                service.addNewRoom(room);
+                                        rentalType, serviceCode,freeService);
+                                service.add(room);
                                 break;
                             case 2:
                                 System.out.print("Tên dịch vụ: ");
@@ -107,6 +124,16 @@ public class FacilityController {
                                     case 3:
                                         rentalType = "Theo năm";
                                 }
+                                boolean flag1 = true;
+                                do {
+                                    System.out.print("Nhập mã dịch vụ: ");
+                                    serviceCode = scanner.nextLine();
+                                    if (serviceCode.matches(VILLA_CODE_REGEX)) {
+                                        flag1 = false;
+                                    } else {
+                                        System.out.println("Hãy nhập đúng cú pháp củ mã dịch vụ phòng");
+                                    }
+                                } while (flag1);
                                 System.out.print("Tiêu chuẩn phòng: ");
                                 String roomStandard = scanner.nextLine();
                                 System.out.print("Diện tích hồ bơi: ");
@@ -114,7 +141,7 @@ public class FacilityController {
                                 System.out.print("Số tầng: ");
                                 int floorNumber = Integer.parseInt(scanner.nextLine());
                                 Villa villa = new Villa(nameRoomService, usableArea, rentalCosts, maximumNumberOfPeople
-                                        , rentalType, roomStandard, poolAera, floorNumber);
+                                        , rentalType, serviceCode ,roomStandard, poolAera, floorNumber);
                                 service.adNewVilla(villa);
                                 break;
                         }
@@ -141,10 +168,7 @@ public class FacilityController {
                         }
                     } while (choiceFacilityMaintenance != 3);
                     break;
-                case 4:
-                    flag = false;
-                    break;
             }
-        } while (flag);
+        } while (choiceFacilityService != 4);
     }
 }

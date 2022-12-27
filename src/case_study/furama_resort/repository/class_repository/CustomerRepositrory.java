@@ -19,6 +19,13 @@ public class CustomerRepositrory implements ICustomerRepository {
                 "984854", "09374623","tvc2000@gmail.com", 3, "Gold",
                 "1 Hoàng Diệu"));
     }
+
+
+    @Override
+    public List<Customer> getAllCustomers() {
+        return customerList;
+    }
+
     @Override
     public Customer findById(int id) {
         for (Customer customer : customerList) {

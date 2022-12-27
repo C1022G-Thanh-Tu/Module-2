@@ -1,17 +1,18 @@
 package case_study.furama_resort.model;
 
+import java.time.LocalDate;
+
 public class Booking {
     private int bookingCode;
-    private String startDate;
-    private String endDate;
-    private String customerId;
+    private LocalDate startDate;
+    private LocalDate endDate;
+    private int customerId;
     private String serviceName;
 
     public Booking() {
     }
 
-    public Booking(int bookingCode, String startDate, String endDate,
-                   String customerId, String serviceName) {
+    public Booking(int bookingCode, LocalDate startDate, LocalDate endDate, int customerId, String serviceName) {
         this.bookingCode = bookingCode;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -27,27 +28,27 @@ public class Booking {
         this.bookingCode = bookingCode;
     }
 
-    public String getStartDate() {
+    public LocalDate getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(String startDate) {
+    public void setStartDate(LocalDate startDate) {
         this.startDate = startDate;
     }
 
-    public String getEndDate() {
+    public LocalDate getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(String endDate) {
+    public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
     }
 
-    public String getCustomerId() {
+    public int getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(String customerId) {
+    public void setCustomerId(int customerId) {
         this.customerId = customerId;
     }
 
@@ -63,9 +64,9 @@ public class Booking {
     public String toString() {
         return "Booking{" +
                 "bookingCode=" + bookingCode +
-                ", startDate='" + startDate + '\'' +
-                ", endDate='" + endDate + '\'' +
-                ", customerId='" + customerId + '\'' +
+                ", startDate=" + startDate +
+                ", endDate=" + endDate +
+                ", customerId=" + customerId +
                 ", serviceName='" + serviceName + '\'' +
                 '}';
     }

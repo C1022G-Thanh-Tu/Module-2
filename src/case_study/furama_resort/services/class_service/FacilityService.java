@@ -24,11 +24,6 @@ public class FacilityService implements IFacilityService {
     }
 
     @Override
-    public void addNewRoom(Room room) {
-        repository.addNewRoom(room);
-    }
-
-    @Override
     public void adNewVilla(Villa villa) {
         repository.adNewVilla(villa);
     }
@@ -50,5 +45,7 @@ public class FacilityService implements IFacilityService {
 
     @Override
     public void add(Object object) {
+        Room room = (Room) object;
+        repository.add(room);
     }
 }
