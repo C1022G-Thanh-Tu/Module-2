@@ -2,14 +2,14 @@ package case_study.furama_resort.model.facility;
 
 public class Villa extends Facility {
     private String roomStandard;
-    private int poolAera;
-    private int floorNumber;
+    private String poolAera;
+    private String floorNumber;
 
     public Villa() {
     }
 
-    public Villa(String serviceName, int usableArea, int rentalCosts, int maximumNumberOfPeople, String rentalType,
-                 String serviceCode, String roomStandard, int poolAera, int floorNumber) {
+    public Villa(String serviceName, String usableArea, String rentalCosts, String maximumNumberOfPeople, String rentalType,
+                 String serviceCode, String roomStandard, String poolAera, String floorNumber) {
         super(serviceName, usableArea, rentalCosts, maximumNumberOfPeople, rentalType, serviceCode);
         this.roomStandard = roomStandard;
         this.poolAera = poolAera;
@@ -24,19 +24,19 @@ public class Villa extends Facility {
         this.roomStandard = roomStandard;
     }
 
-    public int getPoolAera() {
+    public String getPoolAera() {
         return poolAera;
     }
 
-    public void setPoolAera(int poolAera) {
+    public void setPoolAera(String poolAera) {
         this.poolAera = poolAera;
     }
 
-    public int getFloorNumber() {
+    public String getFloorNumber() {
         return floorNumber;
     }
 
-    public void setFloorNumber(int floorNumber) {
+    public void setFloorNumber(String floorNumber) {
         this.floorNumber = floorNumber;
     }
 

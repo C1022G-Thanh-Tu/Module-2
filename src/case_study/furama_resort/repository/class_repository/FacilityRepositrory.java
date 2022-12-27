@@ -20,18 +20,18 @@ public class FacilityRepositrory implements IFacilityRepository {
 //    static List<Booking> bookingList = (List<Booking>) bookingSet;
 
     static {
-        Room room1 = new Room("Phòng vip", 30, 100000, 5,
+        Room room1 = new Room("Phòng vip", "30", "100000", "5",
                 "theo ngày", "SVRO-1234", "ấm nước miễn phí");
-        Room room2 = new Room("Phòng thường", 25, 90000, 4,
+        Room room2 = new Room("Phòng thường", "25", "90000", "4",
                 "theo tháng", "SVRO-6789", "trái cây miễn phí");
-        Room room3 = new Room("Phòng pro vip", 45, 35000, 8,
+        Room room3 = new Room("Phòng pro vip", "45", "35000", "8",
                 "theo năm", "SVRO-5678", "massage miễn phí");
-        Villa villa1 = new Villa("Villa vip", 200, 500000, 20,
-                "Theo ngày", "SVVL-2345","vip", 20, 3);
-        Villa villa2 = new Villa("Villa thường", 250, 550000, 22,
-                "Theo tháng", "SVVL-0012","super vip", 25, 3);
-        Villa villa3 = new Villa("Villa ultra vip", 300, 600000, 25,
-                "Theo năm", "SVVL-8483","ultra vip", 30, 4);
+        Villa villa1 = new Villa("Villa vip", "200", "500000", "20",
+                "Theo ngày", "SVVL-2345","vip", "20", "3");
+        Villa villa2 = new Villa("Villa thường", "250", "550000", "22",
+                "Theo tháng", "SVVL-0012","super vip", "25", "3");
+        Villa villa3 = new Villa("Villa ultra vip", "300", "600000", "25",
+                "Theo năm", "SVVL-8483","ultra vip", "30", "4");
 
 //        for (int i = 0; i < bookingList.size(); i++) {
 //            for (Map.Entry<Room, Integer> entry : availableRoomList.entrySet()) {

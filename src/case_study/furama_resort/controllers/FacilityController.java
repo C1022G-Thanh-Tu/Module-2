@@ -9,9 +9,16 @@ import java.util.Scanner;
 
 public class FacilityController {
 
-    public static final String ROOM_CODE_REGEX = "^[S][V][R][O][-]\\d{4}$";
-    public static final String VILLA_CODE_REGEX = "^[S][V][V][L][-]\\d{4}$";
-    public static final String SERVICE_NAME_REGEX = "^$";
+    public static final String ROOM_CODE_REGEX = "^SVRO-\\d{4}$";
+    public static final String VILLA_CODE_REGEX = "^SVVL-\\d{4}$";
+    public static final String SERVICE_NAME_REGEX = "^[A-Z][a-z]*+(\\s[a-z]+)*$";
+    public static final String USABLE_AREA_REGEX = "^0*([1-9]\\d{2,}|[3-9]\\d|[1-9]\\d{2,}[.]\\d+|[3-9]\\d[.]\\d+)$";
+    public static final String POOL_AREA_REGEX = "^0*([1-9]\\d{2,}|[3-9]\\d|[1-9]\\d{2,}[.]\\d+|[3-9]\\d[.]\\d+)$";
+    public static final String RENTAL_COSTS_REGEX = "^0*\\d+.*\\d+$";
+    public static final String MAXIMUM_NUMBER_OF_PEOPLE = "^0*([1-9]|1[0-9])$";
+    public static final String FLOOR_NUMBER_REGEX = "^0*[1-9]\\d*$";
+    public static final String RENTAL_TYPE_REGEX = "^[A-Z][a-z]*+(\\s[a-z]+)*$";
+    public static final String ROOM_STANDARD_REGEX = "^[A-Z][a-z]*+(\\s[a-z]+)*$";
 
     public void controlFacility() {
         IFacilityService service = new FacilityService();
@@ -30,8 +37,7 @@ public class FacilityController {
                     int choiceDisplayFacilityList;
                     System.out.println("---Danh sách dịch vụ cơ sở vật chất----\n" +
                             "1. Room\n" +
-                            "2. Villa\n" +
-                            "3. Thoát");
+                            "2. Villa");
                     System.out.print("Hãy chọn hiển thị loại danh sách dịch vụ bạn muốn: ");
                     choiceDisplayFacilityList = Integer.parseInt(scanner.nextLine());
                     switch (choiceDisplayFacilityList) {
@@ -56,42 +62,58 @@ public class FacilityController {
                         choiceAddNewFacility = Integer.parseInt(scanner.nextLine());
                         switch (choiceAddNewFacility) {
                             case 1:
-                                System.out.print("Tên dịch vụ: ");
-                                String nameRoomService = scanner.nextLine();
-                                System.out.print("Diện tích sử dựng: ");
-                                int usableArea = Integer.parseInt(scanner.nextLine());
-                                System.out.print("Chi phí thuê: ");
-                                int rentalCosts = Integer.parseInt(scanner.nextLine());
-                                System.out.print("Số lượng người tối đa: ");
-                                int maximumNumberOfPeople = Integer.parseInt(scanner.nextLine());
+                                String nameRoomService;
+                                do {
+                                    System.out.print("Tên dịch vụ: ");
+                                    nameRoomService = scanner.nextLine();
+                                    if (!nameRoomService.matches(SERVICE_NAME_REGEX)) {
+                                        System.out.println("Hãy nhập đúng cấu trúc tên dịch vụ cơ sơ vật chất");
+                                    }
+                                } while (!nameRoomService.matches(SERVICE_NAME_REGEX));
+                                String usableArea;
+                                do {
+                                    System.out.print("Diện tích sử dựng: ");
+                                    usableArea = scanner.nextLine();
+                                    if (!usableArea.matches(USABLE_AREA_REGEX)) {
+                                        System.out.println("Hãy nhập diện tích có giá trị lớn hơn 30");
+                                    }
+                                } while (!usableArea.matches(USABLE_AREA_REGEX));
+                                String rentalCosts;
+                                do {
+                                    System.out.print("Chi phí thuê: ");
+                                    rentalCosts = scanner.nextLine();
+                                    if (!rentalCosts.matches(RENTAL_COSTS_REGEX)) {
+                                        System.out.println("Hãy nhập giá trị là số dương");
+                                    }
+                                } while (!rentalCosts.matches(RENTAL_COSTS_REGEX));
+                                String maximumNumberOfPeople;
+                                do {
+                                    System.out.print("Số lượng người tối đa: ");
+                                    maximumNumberOfPeople = scanner.nextLine();;
+                                    if (!maximumNumberOfPeople.matches(MAXIMUM_NUMBER_OF_PEOPLE)) {
+                                        System.out.println("Số lượng người phải >0 và <20");
+                                    }
+                                } while (!maximumNumberOfPeople.matches(MAXIMUM_NUMBER_OF_PEOPLE));
                                 System.out.println("Kiểu thuê\n" +
-                                        "1. theo ngày\n" +
+                                        "1. Theo ngày\n" +
                                         "2. Theo tháng\n" +
                                         "3. Theo năm");
-                                System.out.print("Hãy chọn kiểu thuê bạn muốn thêm: ");
-                                int choiceRentalType = Integer.parseInt(scanner.nextLine());
-                                String rentalType = "";
-                                switch (choiceRentalType) {
-                                    case 1:
-                                        rentalType = "Theo ngày";
-                                        break;
-                                    case 2:
-                                        rentalType = "Theo tháng";
-                                        break;
-                                    case 3:
-                                        rentalType = "Theo năm";
-                                }
+                                System.out.print("Hãy nhập kiểu thuê bạn muốn thêm: ");
+                                String rentalType;
+                                do {
+                                    rentalType = scanner.nextLine();
+                                    if (!rentalType.matches(RENTAL_TYPE_REGEX)) {
+                                        System.out.println("Hãy nhập đúng cú pháp");
+                                    }
+                                } while (!rentalType.matches(RENTAL_TYPE_REGEX));
                                 String serviceCode;
-                                boolean flag = true;
                                 do {
                                     System.out.print("Nhập mã dịch vụ: ");
                                     serviceCode = scanner.nextLine();
-                                    if (serviceCode.matches(ROOM_CODE_REGEX)) {
-                                        flag = false;
-                                    } else {
+                                    if (!serviceCode.matches(ROOM_CODE_REGEX)) {
                                         System.out.println("Hãy nhập đúng cú pháp củ mã dịch vụ phòng");
                                     }
-                                } while (flag);
+                                } while (!serviceCode.matches(ROOM_CODE_REGEX));
                                 System.out.print("Dịch vụ miễn phí kèm theo: ");
                                 String freeService = scanner.nextLine();
                                 Room room = new Room(nameRoomService, usableArea, rentalCosts, maximumNumberOfPeople,
@@ -99,48 +121,79 @@ public class FacilityController {
                                 service.add(room);
                                 break;
                             case 2:
-                                System.out.print("Tên dịch vụ: ");
-                                nameRoomService = scanner.nextLine();
-                                System.out.print("Diện tích sử dựng: ");
-                                usableArea = Integer.parseInt(scanner.nextLine());
-                                System.out.print("Chi phí thuê: ");
-                                rentalCosts = Integer.parseInt(scanner.nextLine());
-                                System.out.print("Số lượng người tối đa: ");
-                                maximumNumberOfPeople = Integer.parseInt(scanner.nextLine());
+                                String nameVillaService;
+                                do {
+                                    System.out.print("Tên dịch vụ: ");
+                                    nameVillaService = scanner.nextLine();
+                                    if (!nameVillaService.matches(SERVICE_NAME_REGEX)) {
+                                        System.out.println("Hãy nhập đúng cấu trúc tên dịch vụ cơ sơ vật chất");
+                                    }
+                                } while (!nameVillaService.matches(SERVICE_NAME_REGEX));
+                                do {
+                                    System.out.print("Diện tích sử dựng: ");
+                                    usableArea = scanner.nextLine();
+                                    if (!usableArea.matches(USABLE_AREA_REGEX)) {
+                                        System.out.println("Hãy nhập diện tích có giá trị lớn hơn 30");
+                                    }
+                                } while (!usableArea.matches(USABLE_AREA_REGEX));
+                                do {
+                                    System.out.print("Chi phí thuê: ");
+                                    rentalCosts = scanner.nextLine();
+                                    if (!rentalCosts.matches(RENTAL_COSTS_REGEX)) {
+                                        System.out.println("Hãy nhập giá trị là số dương");
+                                    }
+                                } while (!rentalCosts.matches(RENTAL_COSTS_REGEX));
+                                do {
+                                    System.out.print("Số lượng người tối đa: ");
+                                    maximumNumberOfPeople = scanner.nextLine();
+                                    if (!maximumNumberOfPeople.matches(MAXIMUM_NUMBER_OF_PEOPLE)) {
+                                        System.out.println("Số lượng người phải >0 và <20");
+                                    }
+                                } while (!maximumNumberOfPeople.matches(MAXIMUM_NUMBER_OF_PEOPLE));
                                 System.out.println("Kiểu thuê\n" +
-                                        "1. theo ngày\n" +
+                                        "1. Theo ngày\n" +
                                         "2. Theo tháng\n" +
                                         "3. Theo năm");
                                 System.out.print("Hãy chọn kiểu thuê bạn muốn thêm: ");
-                                choiceRentalType = Integer.parseInt(scanner.nextLine());
-                                rentalType = "";
-                                switch (choiceRentalType) {
-                                    case 1:
-                                        rentalType = "Theo ngày";
-                                        break;
-                                    case 2:
-                                        rentalType = "Theo tháng";
-                                        break;
-                                    case 3:
-                                        rentalType = "Theo năm";
-                                }
-                                boolean flag1 = true;
+                                do {
+                                   rentalType=scanner.nextLine();
+                                   if (!rentalType.matches(RENTAL_TYPE_REGEX)) {
+                                       System.out.println("Hãy nhập đúng cú pháp");
+                                   }
+                                }while (!rentalType.matches(RENTAL_TYPE_REGEX));
+
                                 do {
                                     System.out.print("Nhập mã dịch vụ: ");
                                     serviceCode = scanner.nextLine();
-                                    if (serviceCode.matches(VILLA_CODE_REGEX)) {
-                                        flag1 = false;
-                                    } else {
+                                    if (!serviceCode.matches(VILLA_CODE_REGEX)) {
                                         System.out.println("Hãy nhập đúng cú pháp củ mã dịch vụ phòng");
                                     }
-                                } while (flag1);
-                                System.out.print("Tiêu chuẩn phòng: ");
-                                String roomStandard = scanner.nextLine();
-                                System.out.print("Diện tích hồ bơi: ");
-                                int poolAera = Integer.parseInt(scanner.nextLine());
-                                System.out.print("Số tầng: ");
-                                int floorNumber = Integer.parseInt(scanner.nextLine());
-                                Villa villa = new Villa(nameRoomService, usableArea, rentalCosts, maximumNumberOfPeople
+                                } while (!serviceCode.matches(VILLA_CODE_REGEX));
+                                String roomStandard;
+                                do {
+                                    System.out.print("Tiêu chuẩn phòng: ");
+                                    roomStandard = scanner.nextLine();
+                                    if (!roomStandard.matches(ROOM_STANDARD_REGEX)) {
+                                        System.out.println("Hãy nhập đúng cú pháp");
+                                    }
+                                } while (!roomStandard.matches(ROOM_STANDARD_REGEX));
+                                String poolAera;
+                                do {
+                                    System.out.print("Diện tích hồ bơi: ");
+                                    poolAera = scanner.nextLine();
+                                    if (!poolAera.matches(POOL_AREA_REGEX)) {
+                                        System.out.println("Hãy nhập diện tích có giá trị lớn hơn 30");
+                                    }
+                                } while (!poolAera.matches(POOL_AREA_REGEX));
+                                String floorNumber;
+                                do {
+                                    System.out.print("Số tầng: ");
+                                    floorNumber = scanner.nextLine();
+                                    if (!floorNumber.matches(FLOOR_NUMBER_REGEX)) {
+                                        System.out.println("Hãy nhập số nguyên dương");
+                                    }
+                                } while (!floorNumber.matches(FLOOR_NUMBER_REGEX));
+                                Villa villa = new Villa(nameVillaService, usableArea, rentalCosts, maximumNumberOfPeople
                                         , rentalType, serviceCode ,roomStandard, poolAera, floorNumber);
                                 service.adNewVilla(villa);
                                 break;

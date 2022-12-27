@@ -2,16 +2,16 @@ package case_study.furama_resort.model.facility;
 
 public abstract class Facility {
     public String serviceName;
-    public int usableArea;
-    public int rentalCosts;
-    public int maximumNumberOfPeople;
+    public String usableArea;
+    public String rentalCosts;
+    public String maximumNumberOfPeople;
     public String rentalType;
     public String serviceCode;
 
     public Facility() {
     }
 
-    public Facility(String serviceName, int usableArea, int rentalCosts, int maximumNumberOfPeople,
+    public Facility(String serviceName, String usableArea, String rentalCosts, String maximumNumberOfPeople,
                     String rentalType, String serviceCode) {
         this.serviceName = serviceName;
         this.usableArea = usableArea;
@@ -29,27 +29,27 @@ public abstract class Facility {
         this.serviceName = serviceName;
     }
 
-    public int getUsableArea() {
+    public String getUsableArea() {
         return usableArea;
     }
 
-    public void setUsableArea(int usableArea) {
+    public void setUsableArea(String usableArea) {
         this.usableArea = usableArea;
     }
 
-    public int getRentalCosts() {
+    public String getRentalCosts() {
         return rentalCosts;
     }
 
-    public void setRentalCosts(int rentalCosts) {
+    public void setRentalCosts(String rentalCosts) {
         this.rentalCosts = rentalCosts;
     }
 
-    public int getMaximumNumberOfPeople() {
+    public String getMaximumNumberOfPeople() {
         return maximumNumberOfPeople;
     }
 
-    public void setMaximumNumberOfPeople(int maximumNumberOfPeople) {
+    public void setMaximumNumberOfPeople(String maximumNumberOfPeople) {
         this.maximumNumberOfPeople = maximumNumberOfPeople;
     }
 
