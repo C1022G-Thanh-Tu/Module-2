@@ -11,7 +11,6 @@ public class CustomerController {
         ICustomerService service = new CustomerService();
         Scanner scanner = new Scanner(System.in);
         int choiceCustomerService;
-        boolean flag = true;
         do {
             System.out.println("---Customer Management---\n"
                     + "1. Display list customers\n"
@@ -161,10 +160,7 @@ public class CustomerController {
                         } while (choiceEditCustomer != 9);
                     }
                     break;
-                case 4:
-                    flag = false;
-                    break;
             }
-        } while (flag);
+        } while (choiceCustomerService != 4);
     }
 }

@@ -11,7 +11,6 @@ public class EmployeeController {
         IEmployeeService service = new EmployeeService();
         Scanner scanner = new Scanner(System.in);
         int choiceEmployeeService;
-        boolean flag = true;
         do {
             System.out.println("---Employee Management---\n"
                     + "1. Display list employees\n"
@@ -233,10 +232,7 @@ public class EmployeeController {
                         System.out.println("Hãy nhập đúng id");
                     }
                     break;
-                case 5:
-                    flag = false;
-                    break;
             }
-        } while (flag) ;
+        } while (choiceEmployeeService != 5) ;
     }
 }
