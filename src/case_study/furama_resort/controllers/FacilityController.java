@@ -1,5 +1,6 @@
 package case_study.furama_resort.controllers;
 
+import case_study.furama_resort.Regex_Code;
 import case_study.furama_resort.model.facility.Room;
 import case_study.furama_resort.model.facility.Villa;
 import case_study.furama_resort.services.class_service.FacilityService;
@@ -21,6 +22,7 @@ public class FacilityController {
     public static final String ROOM_STANDARD_REGEX = "^[A-Z][a-z]*+(\\s[a-z]+)*$";
 
     public void controlFacility() {
+        Regex_Code regexCode = new Regex_Code();
         IFacilityService service = new FacilityService();
         Scanner scanner = new Scanner(System.in);
         int choiceFacilityService;
