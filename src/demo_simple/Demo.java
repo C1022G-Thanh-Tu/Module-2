@@ -1,14 +1,8 @@
-package demo;
+package demo_simple;
 
-import java.io.Serializable;
-
-public class Demo implements Serializable {
-    private static final long serialVersionUID = 2L;
+public class Demo {
     private int id;
     private String name;
-
-    public Demo() {
-    }
 
     public Demo(int id, String name) {
         this.id = id;
@@ -37,9 +31,5 @@ public class Demo implements Serializable {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 '}';
-    }
-
-    public void abc() {
-        System.out.println("abc");
     }
 }

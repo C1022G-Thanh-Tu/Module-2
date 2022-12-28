@@ -12,6 +12,9 @@ public class Regex_Code {
     public final String RENTAL_TYPE_REGEX = "^[A-Z][a-z]*+(\\s[a-z]+)*$";
     public final String ROOM_STANDARD_REGEX = "^[A-Z][a-z]*+(\\s[a-z]+)*$";
 
+    public Regex_Code() {
+    }
+
     public String getROOM_CODE_REGEX() {
         return ROOM_CODE_REGEX;
     }
@@ -50,5 +53,21 @@ public class Regex_Code {
 
     public String getROOM_STANDARD_REGEX() {
         return ROOM_STANDARD_REGEX;
+    }
+
+    @Override
+    public String toString() {
+        return "Regex_Code{" +
+                "ROOM_CODE_REGEX='" + ROOM_CODE_REGEX + '\'' +
+                ", VILLA_CODE_REGEX='" + VILLA_CODE_REGEX + '\'' +
+                ", SERVICE_NAME_REGEX='" + SERVICE_NAME_REGEX + '\'' +
+                ", USABLE_AREA_REGEX='" + USABLE_AREA_REGEX + '\'' +
+                ", POOL_AREA_REGEX='" + POOL_AREA_REGEX + '\'' +
+                ", RENTAL_COSTS_REGEX='" + RENTAL_COSTS_REGEX + '\'' +
+                ", MAXIMUM_NUMBER_OF_PEOPLE='" + MAXIMUM_NUMBER_OF_PEOPLE + '\'' +
+                ", FLOOR_NUMBER_REGEX='" + FLOOR_NUMBER_REGEX + '\'' +
+                ", RENTAL_TYPE_REGEX='" + RENTAL_TYPE_REGEX + '\'' +
+                ", ROOM_STANDARD_REGEX='" + ROOM_STANDARD_REGEX + '\'' +
+                '}';
     }
 }
