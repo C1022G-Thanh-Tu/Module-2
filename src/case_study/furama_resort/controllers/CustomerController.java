@@ -158,6 +158,7 @@ public class CustomerController {
                                     break;
                             }
                         } while (choiceEditCustomer != 9);
+                        service.editCustomer(customer);
                     }
                     break;
             }

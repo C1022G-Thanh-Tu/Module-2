@@ -8,13 +8,13 @@ import java.util.List;
 
 public class ReadWriteEmployeeCSV {
 
-    public static final String FILE_PATH_WRITE = "D:\\CODEGYM\\Module2\\C1022G1\\src\\case_study\\furama_resort\\CSV_Files\\employee.csv";
+    public static final String FILE_EMPLOYEE_CSV = "D:\\CODEGYM\\Module2\\C1022G1\\src\\case_study\\furama_resort\\CSV_Files\\employee.csv";
 
     public List<Employee> readEmployeeCSV() {
         List<Employee> employeeList = new ArrayList<>();
         BufferedReader bufferedReader = null;
         try {
-            bufferedReader = new BufferedReader(new FileReader(FILE_PATH_WRITE));
+            bufferedReader = new BufferedReader(new FileReader(FILE_EMPLOYEE_CSV));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -50,36 +50,11 @@ public class ReadWriteEmployeeCSV {
         return employeeList;
     }
 
-    public void writeAppendEmployeeCSV(List<Employee> employeeList) {
-        BufferedWriter bufferedWriter = null;
-        try {
-            bufferedWriter = new BufferedWriter(new FileWriter(FILE_PATH_WRITE, true));
-            for (Employee employee : employeeList) {
-                try {
-                    bufferedWriter.write(employee.getFullName() + "," + employee.getDateOfBirth() + "," + employee.getGender()
-                            + "," + employee.getIndentityCardNumber() + "," + employee.getPhoneNumber() + "," + employee.getEmail()
-                            + "," + employee.getEmployeeId() + "," + employee.getAcademicLevel() + "," + employee.getWorkingPosition()
-                            + "," + employee.getSalary() + "\n");
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-            bufferedWriter.flush();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                bufferedWriter.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }
 
-    public void writeOverrideEmployeeCSV(List<Employee> employeeList) {
+    public void writeEmployeeCSV(List<Employee> employeeList) {
         BufferedWriter bufferedWriter = null;
         try {
-            bufferedWriter = new BufferedWriter(new FileWriter(FILE_PATH_WRITE));
+            bufferedWriter = new BufferedWriter(new FileWriter(FILE_EMPLOYEE_CSV));
             for (Employee employee : employeeList) {
                 try {
                     bufferedWriter.write(employee.getFullName() + "," + employee.getDateOfBirth() + "," + employee.getGender()

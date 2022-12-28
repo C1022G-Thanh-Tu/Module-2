@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EmployeeRepositrory implements IEmployeeRepository {
-    ReadWriteEmployeeCSV readWriteEmployeeCSV = new ReadWriteEmployeeCSV();
+    static ReadWriteEmployeeCSV readWriteEmployeeCSV = new ReadWriteEmployeeCSV();
     static List<Employee> employeeList = new ArrayList<>();
 
     @Override
@@ -30,7 +30,7 @@ public class EmployeeRepositrory implements IEmployeeRepository {
                 employeeList1.remove(employeeList1.get(i));
             }
         }
-        readWriteEmployeeCSV.writeOverrideEmployeeCSV(employeeList1);
+        readWriteEmployeeCSV.writeEmployeeCSV(employeeList1);
     }
 
     @Override
@@ -41,7 +41,7 @@ public class EmployeeRepositrory implements IEmployeeRepository {
                 employeeList1.set(i, employee);
             }
         }
-        readWriteEmployeeCSV.writeOverrideEmployeeCSV(employeeList1);
+        readWriteEmployeeCSV.writeEmployeeCSV(employeeList1);
     }
 
     @Override
@@ -55,7 +55,14 @@ public class EmployeeRepositrory implements IEmployeeRepository {
     @Override
     public void add(Object object) {
         Employee employee = (Employee) object;
-        employeeList.add(employee);
-        readWriteEmployeeCSV.writeAppendEmployeeCSV(employeeList);
+        if (employeeList == null) {
+            employeeList.add(employee);
+            readWriteEmployeeCSV.writeEmployeeCSV(employeeList);
+        } else {
+            List<Employee> employeeList1 = readWriteEmployeeCSV.readEmployeeCSV();
+            employeeList1.add(employee);
+            readWriteEmployeeCSV.writeEmployeeCSV(employeeList1);
+        }
+
     }
 }
