@@ -1,12 +1,12 @@
 package case_study.furama_resort.model.facility;
 
 public abstract class Facility {
-    public String serviceName;
-    public String usableArea;
-    public String rentalCosts;
-    public String maximumNumberOfPeople;
-    public String rentalType;
-    public String serviceCode;
+    private String serviceName;
+    private String usableArea;
+    private String rentalCosts;
+    private String maximumNumberOfPeople;
+    private String rentalType;
+    private String serviceCode;
 
     public Facility() {
     }
@@ -71,13 +71,11 @@ public abstract class Facility {
 
     @Override
     public String toString() {
-        return "Facility{" +
-                "serviceName='" + serviceName + '\'' +
+        return  "serviceName='" + serviceName + '\'' +
                 ", usableArea=" + usableArea +
                 ", rentalCosts=" + rentalCosts +
                 ", maximumNumberOfPeople=" + maximumNumberOfPeople +
                 ", rentalType='" + rentalType + '\'' +
-                ", serviceCode='" + serviceCode + '\'' +
-                '}';
+                ", serviceCode='" + serviceCode + '\'';
     }
 }

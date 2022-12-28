@@ -23,13 +23,8 @@ public class Room extends Facility {
     @Override
     public String toString() {
         return "Room{" +
+                super.toString()+
                 "freeService='" + freeService + '\'' +
-                ", serviceName='" + serviceName + '\'' +
-                ", usableArea=" + usableArea +
-                ", rentalCosts=" + rentalCosts +
-                ", maximumNumberOfPeople=" + maximumNumberOfPeople +
-                ", rentalType='" + rentalType + '\'' +
-                ", serviceCode='" + serviceCode + '\'' +
-                '}';
+                "}";
     }
 }

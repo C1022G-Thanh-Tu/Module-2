@@ -30,6 +30,7 @@ public class EmployeeRepositrory implements IEmployeeRepository {
                 employeeList1.remove(employeeList1.get(i));
             }
         }
+        readWriteEmployeeCSV.writeOverrideEmployeeCSV(employeeList1);
     }
 
     @Override
@@ -40,6 +41,7 @@ public class EmployeeRepositrory implements IEmployeeRepository {
                 employeeList1.set(i, employee);
             }
         }
+        readWriteEmployeeCSV.writeOverrideEmployeeCSV(employeeList1);
     }
 
     @Override
@@ -54,6 +56,6 @@ public class EmployeeRepositrory implements IEmployeeRepository {
     public void add(Object object) {
         Employee employee = (Employee) object;
         employeeList.add(employee);
-        readWriteEmployeeCSV.writeEmployeeCSV(employeeList);
+        readWriteEmployeeCSV.writeAppendEmployeeCSV(employeeList);
     }
 }

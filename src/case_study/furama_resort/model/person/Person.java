@@ -1,12 +1,12 @@
 package case_study.furama_resort.model.person;
 
 public abstract class Person {
-    public String fullName;
-    public String dateOfBirth;
-    public String gender;
-    public String indentityCardNumber;
-    public String phoneNumber;
-    public String email;
+    private String fullName;
+    private String dateOfBirth;
+    private String gender;
+    private String indentityCardNumber;
+    private String phoneNumber;
+    private String email;
 
     public Person() {
     }
@@ -70,13 +70,11 @@ public abstract class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
-                "fullName='" + fullName + '\'' +
+        return  "fullName='" + fullName + '\'' +
                 ", dateOfBirth='" + dateOfBirth + '\'' +
                 ", gender='" + gender + '\'' +
                 ", indentityCardNumber='" + indentityCardNumber + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+                ", email='" + email + '\'';
     }
 }
