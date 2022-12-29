@@ -37,8 +37,8 @@ public class FacilityRepositrory implements IFacilityRepository {
                 maintenanceRoomList.clear();
             }
         }
-        for (int i = 0; i < roomList.size(); i++) {
-            availableRoomList1.remove(roomList.get(i));
+        for (Room room : roomList) {
+            availableRoomList1.remove(room);
             rwAvailableRoomCSV.writeOverrideAvailableRoomCSV(availableRoomList1);
         }
     }
@@ -55,8 +55,8 @@ public class FacilityRepositrory implements IFacilityRepository {
                 maintenanceVillaList.clear();
             }
         }
-        for (int i = 0; i < villaList.size(); i++) {
-            availableVillaList1.remove(villaList.get(i));
+        for (Villa villa : villaList) {
+            availableVillaList1.remove(villa);
             rwAvailableVillaCSV.writeOverrideAvailableRoomCSV(availableVillaList1);
         }
     }
@@ -85,7 +85,6 @@ public class FacilityRepositrory implements IFacilityRepository {
         }
     }
 
-    // display room
     @Override
     public void display() {
         Map<Room, Integer> availableRoomList1 = rwAvailableRoomCSV.readAvailableRoomCSV();
@@ -94,7 +93,6 @@ public class FacilityRepositrory implements IFacilityRepository {
         }
     }
 
-    //add room
     @Override
     public void add(Object object) {
         Room room = (Room) object;
