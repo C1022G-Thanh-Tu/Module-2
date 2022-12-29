@@ -12,11 +12,11 @@ public class CustomerController {
         Scanner scanner = new Scanner(System.in);
         int choiceCustomerService;
         do {
-            System.out.println("---Customer Management---\n"
-                    + "1. Display list customers\n"
-                    + "2. Add new customer\n"
-                    + "3. Edit customer\n"
-                    + "4. Return main menu");
+            System.out.println("---Hệ thống quản lý khách hàng---\n"
+                    + "1. Hiển thị danh sách khách hàng\n"
+                    + "2. Thêm khách hàng mới\n"
+                    + "3. Điều chỉnh thông tin khách hàng\n"
+                    + "4. Về menu chính");
             System.out.print("Hãy chọn dịch vụ: ");
             choiceCustomerService = Integer.parseInt(scanner.nextLine());
             switch (choiceCustomerService) {

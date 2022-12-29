@@ -15,11 +15,11 @@ public class FacilityController {
         Scanner scanner = new Scanner(System.in);
         int choiceFacilityService;
         do {
-            System.out.println("---Facility Management---\n"
-                    + "1. Display list facility\n"
-                    + "2. Add new facility\n"
-                    + "3. Display list facility maintenance\n"
-                    + "4. Return main menu");
+            System.out.println("---Hệ thống quản lý dịch vụ cơ sở hạ tầng---\n"
+                    + "1. Hiển thị danh sách dịch vụ cơ sở hạ tầng\n"
+                    + "2. Thêm dịch vụ cơ sở hạ tầng mới\n"
+                    + "3. Hiển thị danh sách dịch vụ cơ sở hạ tầng cần bảo trì\n"
+                    + "4. Về menu chính");
             System.out.print("Hãy chọn dịch vụ: ");
             choiceFacilityService = Integer.parseInt(scanner.nextLine());
             switch (choiceFacilityService) {

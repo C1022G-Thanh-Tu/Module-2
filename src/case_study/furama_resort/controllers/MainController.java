@@ -4,13 +4,13 @@ import java.util.Scanner;
 
 public class MainController {
     public static void displayMainMenu() {
-        System.out.println("---Furama Management---\n"
-                + "1. Employee Management\n"
-                + "2. Customer Management\n"
-                + "3. Facility Management\n"
-                + "4. Booking Management\n"
-                + "5. Promotion Management\n"
-                + "6. Exit");
+        System.out.println("---Hệ thống quản lý Furama---\n"
+                + "1. Hệ thống quản lý nhân viên\n"
+                + "2. Hệ thống quản lý khách hàng\n"
+                + "3. Hệ thống quản lý dịch vụ cơ sở hạ tầng\n"
+                + "4. Hệ thống quản lý Booking\n"
+                + "5. Hệ thống quản lý khuyến mãi\n"
+                + "6. Thoát hệ thống");
     }
 
     public static void main(String[] args) {

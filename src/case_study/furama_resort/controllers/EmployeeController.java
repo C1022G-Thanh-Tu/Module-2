@@ -12,12 +12,12 @@ public class EmployeeController {
         Scanner scanner = new Scanner(System.in);
         int choiceEmployeeService;
         do {
-            System.out.println("---Employee Management---\n"
-                    + "1. Display list employees\n"
-                    + "2. Add new employee\n"
-                    + "3. Delete employee\n"
-                    + "4. Edit employee\n"
-                    + "5. Return main menu");
+            System.out.println("---Hệ thống quản lý nhân viên---\n"
+                    + "1. Hiển thị danh sách nhân viên\n"
+                    + "2. Thêm nhân viên mới\n"
+                    + "3. Xóa nhân viên\n"
+                    + "4. Điều chỉnh nhân viên\n"
+                    + "5. Về menu chính");
             System.out.print("Hãy chọn dịch vụ: ");
             choiceEmployeeService = Integer.parseInt(scanner.nextLine());
             switch (choiceEmployeeService) {
