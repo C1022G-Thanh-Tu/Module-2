@@ -55,10 +55,9 @@ public class RWAvailableVillaCSV {
         try {
             bufferedWriter = new BufferedWriter(new FileWriter(AVAILABLE_VILLA_CSV, true));
             for (Map.Entry<Villa, Integer> entry : availabelVillaList.entrySet()) {
-                bufferedWriter.write(entry.getKey().toStringCSV() + "," + entry.getValue());
+                bufferedWriter.write(entry.getKey().toStringCSV() + "," + entry.getValue() +"\n");
             }
             bufferedWriter.flush();
-            bufferedWriter.newLine();
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -75,10 +74,9 @@ public class RWAvailableVillaCSV {
         try {
             bufferedWriter = new BufferedWriter(new FileWriter(AVAILABLE_VILLA_CSV));
             for (Map.Entry<Villa, Integer> entry : availableRoomList.entrySet()) {
-                bufferedWriter.write(entry.getKey().toStringCSV() + "," + entry.getValue());
+                bufferedWriter.write(entry.getKey().toStringCSV() + "," + entry.getValue() +"\n");
             }
             bufferedWriter.flush();
-            bufferedWriter.newLine();
         } catch (IOException e) {
             e.printStackTrace();
         } finally {

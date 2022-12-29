@@ -2,6 +2,8 @@ package case_study.furama_resort.repository.class_repository;
 
 import case_study.furama_resort.Read_Write_CSV.RWAvailableRoomCSV;
 import case_study.furama_resort.Read_Write_CSV.RWAvailableVillaCSV;
+import case_study.furama_resort.Read_Write_CSV.RWMaintenanceRoomCSV;
+import case_study.furama_resort.Read_Write_CSV.RWMaintenanceVillaCSV;
 import case_study.furama_resort.model.facility.Room;
 import case_study.furama_resort.model.facility.Villa;
 import case_study.furama_resort.repository.interface_repository.IFacilityRepository;
@@ -11,6 +13,8 @@ import java.util.*;
 public class FacilityRepositrory implements IFacilityRepository {
     RWAvailableRoomCSV rwAvailableRoomCSV = new RWAvailableRoomCSV();
     RWAvailableVillaCSV rwAvailableVillaCSV = new RWAvailableVillaCSV();
+    RWMaintenanceRoomCSV rwMaintenanceRoomCSV = new RWMaintenanceRoomCSV();
+    RWMaintenanceVillaCSV rwMaintenanceVillaCSV = new RWMaintenanceVillaCSV();
 //    static IBookingRepository bookingRepository = new BookingRepositrory();
 
     static Map<Room, Integer> availableRoomList = new LinkedHashMap<>();
@@ -23,42 +27,52 @@ public class FacilityRepositrory implements IFacilityRepository {
 
     @Override
     public void createListRoomMaintenance() {
+        Map<Room, Integer> availableRoomList1 = rwAvailableRoomCSV.readAvailableRoomCSV();
         List<Room> roomList = new ArrayList<>();
-        for (Map.Entry<Room, Integer> entry : availableRoomList.entrySet()) {
+        for (Map.Entry<Room, Integer> entry : availableRoomList1.entrySet()) {
             if (entry.getValue() >= 5) {
                 maintenanceRoomList.put(entry.getKey(), entry.getValue());
                 roomList.add(entry.getKey());
+                rwMaintenanceRoomCSV.writeAppendMaintenanceRoomCSV(maintenanceRoomList);
+                maintenanceRoomList.clear();
             }
         }
         for (int i = 0; i < roomList.size(); i++) {
-            availableRoomList.remove(roomList.get(i));
+            availableRoomList1.remove(roomList.get(i));
+            rwAvailableRoomCSV.writeOverrideAvailableRoomCSV(availableRoomList1);
         }
     }
 
     @Override
     public void createListVillaMaintenance() {
+        Map<Villa, Integer> availableVillaList1 = rwAvailableVillaCSV.readAvailableVillaCSV();
         List<Villa> villaList = new ArrayList<>();
-        for (Map.Entry<Villa, Integer> entry : availableVillaList.entrySet()) {
+        for (Map.Entry<Villa, Integer> entry : availableVillaList1.entrySet()) {
             if (entry.getValue() >= 5) {
                 maintenanceVillaList.put(entry.getKey(), entry.getValue());
                 villaList.add(entry.getKey());
+                rwMaintenanceVillaCSV.writeApppendMaintenanceVillaCSV(maintenanceVillaList);
+                maintenanceVillaList.clear();
             }
         }
         for (int i = 0; i < villaList.size(); i++) {
-            availableVillaList.remove(villaList.get(i));
+            availableVillaList1.remove(villaList.get(i));
+            rwAvailableVillaCSV.writeOverrideAvailableRoomCSV(availableVillaList1);
         }
     }
 
     @Override
     public void displayListVillaMaintenance() {
-        for (Map.Entry<Villa, Integer> entry : maintenanceVillaList.entrySet()) {
+        Map<Villa, Integer> maintenanceVillaList1 = rwMaintenanceVillaCSV.readMaintenanceVillaCSV();
+        for (Map.Entry<Villa, Integer> entry : maintenanceVillaList1.entrySet()) {
             System.out.println(entry.getKey() + ": " + entry.getValue() + " lần sử dụng");
         }
     }
 
     @Override
     public void displayListRoomMaintenance() {
-        for (Map.Entry<Room, Integer> entry : maintenanceRoomList.entrySet()) {
+        Map<Room, Integer> maintenanceRoomList1 = rwMaintenanceRoomCSV.readMaintenanceRoomCSV();
+        for (Map.Entry<Room, Integer> entry : maintenanceRoomList1.entrySet()) {
             System.out.println(entry.getKey() + ": " + entry.getValue() + " lần sử dụng");
         }
     }

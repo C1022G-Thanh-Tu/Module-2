@@ -52,10 +52,9 @@ public class RWAvailableRoomCSV {
         try {
             bufferedWriter = new BufferedWriter(new FileWriter(AVAILABLE_ROOM_CSV, true));
             for (Map.Entry<Room, Integer> entry : availableRoomList.entrySet()) {
-                bufferedWriter.write(entry.getKey().toStringCSV() + "," + entry.getValue());
+                bufferedWriter.write(entry.getKey().toStringCSV() + "," + entry.getValue() +"\n");
             }
             bufferedWriter.flush();
-            bufferedWriter.newLine();
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -72,10 +71,9 @@ public class RWAvailableRoomCSV {
         try {
             bufferedWriter = new BufferedWriter(new FileWriter(AVAILABLE_ROOM_CSV));
             for (Map.Entry<Room, Integer> entry : availableRoomList.entrySet()) {
-                bufferedWriter.write(entry.getKey().toStringCSV() + "," + entry.getValue());
+                bufferedWriter.write(entry.getKey().toStringCSV() + "," + entry.getValue() +"\n");
             }
             bufferedWriter.flush();
-            bufferedWriter.newLine();
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
