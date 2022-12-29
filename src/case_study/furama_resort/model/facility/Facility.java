@@ -78,4 +78,9 @@ public abstract class Facility {
                 ", rentalType='" + rentalType + '\'' +
                 ", serviceCode='" + serviceCode + '\'';
     }
+
+    public String toStringCSV() {
+        return this.serviceName+","+this.usableArea+","+this.rentalCosts+","+this.maximumNumberOfPeople+","+
+                this.rentalType+","+this.serviceCode;
+    }
 }

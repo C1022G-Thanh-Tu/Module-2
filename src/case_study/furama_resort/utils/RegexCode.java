@@ -1,18 +1,18 @@
-package case_study.furama_resort;
+package case_study.furama_resort.utils;
 
-public class Regex_Code {
-    public final String ROOM_CODE_REGEX = "^SVRO-\\d{4}$";
-    public final String VILLA_CODE_REGEX = "^SVVL-\\d{4}$";
-    public final String SERVICE_NAME_REGEX = "^[A-Z][a-z]*+(\\s[a-z]+)*$";
-    public final String USABLE_AREA_REGEX = "^0*([1-9]\\d{2,}|[3-9]\\d|[1-9]\\d{2,}[.]\\d+|[3-9]\\d[.]\\d+)$";
-    public final String POOL_AREA_REGEX = "^0*([1-9]\\d{2,}|[3-9]\\d|[1-9]\\d{2,}[.]\\d+|[3-9]\\d[.]\\d+)$";
-    public final String RENTAL_COSTS_REGEX = "^0*\\d+.*\\d+$";
-    public final String MAXIMUM_NUMBER_OF_PEOPLE = "^0*([1-9]|1[0-9])$";
-    public final String FLOOR_NUMBER_REGEX = "^0*[1-9]\\d*$";
-    public final String RENTAL_TYPE_REGEX = "^[A-Z][a-z]*+(\\s[a-z]+)*$";
-    public final String ROOM_STANDARD_REGEX = "^[A-Z][a-z]*+(\\s[a-z]+)*$";
+public class RegexCode {
+    private final String ROOM_CODE_REGEX = "^SVRO-\\d{4}$";
+    private final String VILLA_CODE_REGEX = "^SVVL-\\d{4}$";
+    private final String SERVICE_NAME_REGEX = "^[A-Z][a-z]*+(\\s[a-z]+)*$";
+    private final String USABLE_AREA_REGEX = "^0*([1-9]\\d{2,}|[3-9]\\d|[1-9]\\d{2,}[.]\\d+|[3-9]\\d[.]\\d+)$";
+    private final String POOL_AREA_REGEX = "^0*([1-9]\\d{2,}|[3-9]\\d|[1-9]\\d{2,}[.]\\d+|[3-9]\\d[.]\\d+)$";
+    private final String RENTAL_COSTS_REGEX = "^0*\\d+.*\\d+$";
+    private final String MAXIMUM_NUMBER_OF_PEOPLE = "^0*([1-9]|1[0-9])$";
+    private final String FLOOR_NUMBER_REGEX = "^0*[1-9]\\d*$";
+    private final String RENTAL_TYPE_REGEX = "^[A-Z][a-z]*+(\\s[a-z]+)*$";
+    private final String ROOM_STANDARD_REGEX = "^[A-Z][a-z]*+(\\s[a-z]+)*$";
 
-    public Regex_Code() {
+    public RegexCode() {
     }
 
     public String getROOM_CODE_REGEX() {

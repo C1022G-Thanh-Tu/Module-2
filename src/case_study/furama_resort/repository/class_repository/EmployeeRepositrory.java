@@ -1,6 +1,6 @@
 package case_study.furama_resort.repository.class_repository;
 
-import case_study.furama_resort.Read_Write_CSV.ReadWriteEmployeeCSV;
+import case_study.furama_resort.Read_Write_CSV.RWEmployeeCSV;
 import case_study.furama_resort.model.person.Employee;
 import case_study.furama_resort.repository.interface_repository.IEmployeeRepository;
 
@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EmployeeRepositrory implements IEmployeeRepository {
-    static ReadWriteEmployeeCSV readWriteEmployeeCSV = new ReadWriteEmployeeCSV();
+    static RWEmployeeCSV readWriteEmployeeCSV = new RWEmployeeCSV();
     static List<Employee> employeeList = new ArrayList<>();
 
     @Override
@@ -30,7 +30,7 @@ public class EmployeeRepositrory implements IEmployeeRepository {
                 employeeList1.remove(employeeList1.get(i));
             }
         }
-        readWriteEmployeeCSV.writeEmployeeCSV(employeeList1);
+        readWriteEmployeeCSV.writeOverrideEmployeeCSV(employeeList1);
     }
 
     @Override
@@ -41,7 +41,7 @@ public class EmployeeRepositrory implements IEmployeeRepository {
                 employeeList1.set(i, employee);
             }
         }
-        readWriteEmployeeCSV.writeEmployeeCSV(employeeList1);
+        readWriteEmployeeCSV.writeOverrideEmployeeCSV(employeeList1);
     }
 
     @Override
@@ -55,14 +55,8 @@ public class EmployeeRepositrory implements IEmployeeRepository {
     @Override
     public void add(Object object) {
         Employee employee = (Employee) object;
-        if (employeeList == null) {
-            employeeList.add(employee);
-            readWriteEmployeeCSV.writeEmployeeCSV(employeeList);
-        } else {
-            List<Employee> employeeList1 = readWriteEmployeeCSV.readEmployeeCSV();
-            employeeList1.add(employee);
-            readWriteEmployeeCSV.writeEmployeeCSV(employeeList1);
-        }
-
+        employeeList.add(employee);
+        readWriteEmployeeCSV.writeAppendEmployeeCSV(employeeList);
+        employeeList.clear();
     }
 }

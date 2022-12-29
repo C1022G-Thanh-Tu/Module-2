@@ -6,7 +6,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ReadWriteCustomerCSV {
+public class RWCustomerCSV {
 
     public static final String FILES_CUSTOMER_CSV = "D:\\CODEGYM\\Module2\\C1022G1\\src\\case_study\\furama_resort\\CSV_Files\\customer.csv";
 
@@ -49,7 +49,28 @@ public class ReadWriteCustomerCSV {
         return customerList;
     }
 
-    public void writeCustomer(List<Customer> customerList) {
+    public void writeAppendCustomerCSV(List<Customer> customerList) {
+        BufferedWriter bufferedWriter = null;
+        try {
+            bufferedWriter = new BufferedWriter(new FileWriter(FILES_CUSTOMER_CSV,true));
+            for (Customer customer : customerList) {
+                bufferedWriter.write(customer.getFullName()+","+customer.getDateOfBirth()+","+customer.getGender()
+                        +","+customer.getIndentityCardNumber()+","+customer.getPhoneNumber()+","+customer.getEmail()
+                        +","+customer.getCustomerId()+","+customer.getCustomerType()+","+customer.getCustomerAddress()+"\n");
+            }
+            bufferedWriter.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                bufferedWriter.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void writeOverrideCustomerCSV(List<Customer> customerList) {
         BufferedWriter bufferedWriter = null;
         try {
             bufferedWriter = new BufferedWriter(new FileWriter(FILES_CUSTOMER_CSV));

@@ -1,6 +1,6 @@
 package case_study.furama_resort.controllers;
 
-import case_study.furama_resort.Regex_Code;
+import case_study.furama_resort.utils.RegexCode;
 import case_study.furama_resort.model.facility.Room;
 import case_study.furama_resort.model.facility.Villa;
 import case_study.furama_resort.services.class_service.FacilityService;
@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class FacilityController {
     public void controlFacility() {
-        Regex_Code regexCode = new Regex_Code();
+        RegexCode regexCode = new RegexCode();
         IFacilityService service = new FacilityService();
         Scanner scanner = new Scanner(System.in);
         int choiceFacilityService;

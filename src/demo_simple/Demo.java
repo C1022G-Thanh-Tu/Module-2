@@ -32,4 +32,8 @@ public class Demo {
                 ", name='" + name + '\'' +
                 '}';
     }
+
+    public String toStringCSV() {
+        return this.getId() + "," + this.getName();
+    }
 }
