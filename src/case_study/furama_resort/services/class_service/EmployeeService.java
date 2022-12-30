@@ -8,7 +8,7 @@ import case_study.furama_resort.services.interface_service.IEmployeeService;
 public class EmployeeService implements IEmployeeService {
     IEmployeeRepository repository = new EmployeeRepositrory();
     @Override
-    public Employee findById(int id) {
+    public Employee findById(String id) {
         return repository.findById(id);
     }
 

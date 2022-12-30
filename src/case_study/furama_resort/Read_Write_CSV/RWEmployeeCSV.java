@@ -30,10 +30,10 @@ public class RWEmployeeCSV {
                 String indentityCardNumber = temp[3];
                 String phoneNumber = temp[4];
                 String email = temp[5];
-                int employeeId = Integer.parseInt(temp[6]);
+                String employeeId = temp[6];
                 String academicLevel = temp[7];
                 String workingPosition = temp[8];
-                int salary = Integer.parseInt(temp[9]);
+                String salary = temp[9];
                 employee = new Employee(fullName, dateOfBirth, gender, indentityCardNumber, phoneNumber, email, employeeId,
                         academicLevel, workingPosition, salary);
                 employeeList.add(employee);

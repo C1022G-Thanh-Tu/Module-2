@@ -12,10 +12,10 @@ public class EmployeeRepositrory implements IEmployeeRepository {
     static List<Employee> employeeList = new ArrayList<>();
 
     @Override
-    public Employee findById(int id) {
+    public Employee findById(String id) {
         List<Employee> employeeList1 = readWriteEmployeeCSV.readEmployeeCSV();
         for (Employee employee : employeeList1) {
-            if (employee.getEmployeeId() == id) {
+            if (employee.getEmployeeId().equals(id)) {
                 return employee;
             }
         }
@@ -26,7 +26,7 @@ public class EmployeeRepositrory implements IEmployeeRepository {
     public void deleteEmployee(Employee employee) {
         List<Employee> employeeList1 = readWriteEmployeeCSV.readEmployeeCSV();
         for (int i = 0; i < employeeList1.size(); i++) {
-            if (employeeList1.get(i).getEmployeeId() == employee.getEmployeeId()) {
+            if (employeeList1.get(i).getEmployeeId().equals(employee.getEmployeeId())) {
                 employeeList1.remove(employeeList1.get(i));
             }
         }
@@ -37,7 +37,7 @@ public class EmployeeRepositrory implements IEmployeeRepository {
     public void editEmployee(Employee employee) {
         List<Employee> employeeList1 = readWriteEmployeeCSV.readEmployeeCSV();
         for (int i = 0; i < employeeList1.size(); i++) {
-            if (employeeList1.get(i).getEmployeeId() == employee.getEmployeeId()) {
+            if (employeeList1.get(i).getEmployeeId().equals(employee.getEmployeeId())) {
                 employeeList1.set(i, employee);
             }
         }
