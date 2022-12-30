@@ -41,7 +41,7 @@ public class EmployeeController {
                         System.out.print("Hãy nhập id của nhân viên mới: ");
                         String newEmployeeId = scanner.nextLine();
                         String newEmployeeAcademicLevel = "";
-                        int choiceEmployeeAcademicLevel = 0;
+                        int choiceEmployeeAcademicLevel;
                         boolean flagAcademicLevel;
                         do {
                             flagAcademicLevel = false;
@@ -78,7 +78,7 @@ public class EmployeeController {
                             }
                         } while (flagAcademicLevel);
                         String newEmployeeWoringPosition = "";
-                        int choiceEmployeeWoringPosition = 0;
+                        int choiceEmployeeWoringPosition;
                         boolean flagWrokingPosition;
                         do {
                             flagWrokingPosition = false;
