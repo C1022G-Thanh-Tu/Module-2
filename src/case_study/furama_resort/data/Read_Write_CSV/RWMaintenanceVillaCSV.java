@@ -1,22 +1,22 @@
-package case_study.furama_resort.Read_Write_CSV;
+package case_study.furama_resort.data.Read_Write_CSV;
 
-import case_study.furama_resort.model.facility.Room;
+import case_study.furama_resort.model.facility.Villa;
 
 import java.io.*;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class RWMaintenanceRoomCSV {
+public class RWMaintenanceVillaCSV {
 
-    public static final String MAINTANANCE_ROOM_CSV = "src\\case_study\\furama_resort\\CSV_Files\\maintanance_room.csv";
+    public static final String MAINTANANCE_VILLA_CSV = "src\\case_study\\furama_resort\\data\\CSV_Files\\maintanance_villa.csv";
 
-    public Map<Room, Integer> readMaintenanceRoomCSV() {
-        Map<Room, Integer> maintenanceRoomList = new LinkedHashMap<>();
+    public Map<Villa, Integer> readMaintenanceVillaCSV() {
+        Map<Villa, Integer> maintenancelVillaList = new LinkedHashMap<>();
         BufferedReader bufferedReader = null;
         try {
-            bufferedReader = new BufferedReader(new FileReader(MAINTANANCE_ROOM_CSV));
+            bufferedReader = new BufferedReader(new FileReader(MAINTANANCE_VILLA_CSV));
             String line;
-            Room room;
+            Villa villa;
             String[] temp;
             try {
                 while ((line = bufferedReader.readLine()) != null) {
@@ -27,9 +27,12 @@ public class RWMaintenanceRoomCSV {
                     String maximumNumberOfPeople = temp[3];
                     String rentalType = temp[4];
                     String serviceCode = temp[5];
-                    String freeService = temp[6];
-                    room = new Room(serviceName,usableArea,rentalCosts,maximumNumberOfPeople,rentalType,serviceCode,freeService);
-                    maintenanceRoomList.put(room,Integer.parseInt(temp[7]));
+                    String roomStandard = temp[6];
+                    String poolAera = temp[7];
+                    String floorNumber = temp[8];
+                    villa = new Villa(serviceName, usableArea, rentalCosts, maximumNumberOfPeople, rentalType, serviceCode
+                            , roomStandard, poolAera, floorNumber);
+                    maintenancelVillaList.put(villa, Integer.parseInt(temp[9]));
                 }
             } catch (IOException e) {
                 e.printStackTrace();
@@ -44,15 +47,15 @@ public class RWMaintenanceRoomCSV {
                 e.printStackTrace();
             }
         }
-        return maintenanceRoomList;
+        return maintenancelVillaList;
     }
 
-    public void writeAppendMaintenanceRoomCSV(Map<Room, Integer> maintenanceRoomList) {
+    public void writeApppendMaintenanceVillaCSV(Map<Villa, Integer> maintenancelVillaList) {
         BufferedWriter bufferedWriter = null;
         try {
-            bufferedWriter = new BufferedWriter(new FileWriter(MAINTANANCE_ROOM_CSV, true));
-            for (Map.Entry<Room, Integer> entry : maintenanceRoomList.entrySet()) {
-                bufferedWriter.write(entry.getKey().toStringCSV() + "," + entry.getValue() +"\n");
+            bufferedWriter = new BufferedWriter(new FileWriter(MAINTANANCE_VILLA_CSV, true));
+            for (Map.Entry<Villa, Integer> entry : maintenancelVillaList.entrySet()) {
+                bufferedWriter.write(entry.getKey().toStringCSV() + "," + entry.getValue() + "\n");
             }
             bufferedWriter.flush();
         } catch (IOException e) {
@@ -66,12 +69,12 @@ public class RWMaintenanceRoomCSV {
         }
     }
 
-//    public void writeOverrideMaintenanceRoomCSV(Map<Room, Integer> maintenanceRoomList) {
+//    public void writeOverrideMaintenanceVillaCSV(Map<Villa, Integer> maintenancelVillaList) {
 //        BufferedWriter bufferedWriter = null;
 //        try {
-//            bufferedWriter = new BufferedWriter(new FileWriter(MAINTANANCE_ROOM_CSV));
-//            for (Map.Entry<Room, Integer> entry : maintenanceRoomList.entrySet()) {
-//                bufferedWriter.write(entry.getKey().toStringCSV() + "," + entry.getValue() +"\n");
+//            bufferedWriter = new BufferedWriter(new FileWriter(MAINTANANCE_VILLA_CSV));
+//            for (Map.Entry<Villa, Integer> entry : maintenancelVillaList.entrySet()) {
+//                bufferedWriter.write(entry.getKey().toStringCSV() + "," + entry.getValue() + "\n");
 //            }
 //            bufferedWriter.flush();
 //        } catch (IOException e) {

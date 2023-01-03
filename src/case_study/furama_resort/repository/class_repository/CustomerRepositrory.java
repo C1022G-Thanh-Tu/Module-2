@@ -1,6 +1,6 @@
 package case_study.furama_resort.repository.class_repository;
 
-import case_study.furama_resort.Read_Write_CSV.RWCustomerCSV;
+import case_study.furama_resort.data.Read_Write_CSV.RWCustomerCSV;
 import case_study.furama_resort.model.person.Customer;
 import case_study.furama_resort.repository.interface_repository.ICustomerRepository;
 

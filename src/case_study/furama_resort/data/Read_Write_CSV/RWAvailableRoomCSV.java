@@ -1,4 +1,4 @@
-package case_study.furama_resort.Read_Write_CSV;
+package case_study.furama_resort.data.Read_Write_CSV;
 
 import case_study.furama_resort.model.facility.Room;
 
@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class RWAvailableRoomCSV {
 
-    public static final String AVAILABLE_ROOM_CSV = "D:\\CODEGYM\\Module2\\C1022G1\\src\\case_study\\furama_resort\\CSV_Files\\available_room.csv";
+    public static final String AVAILABLE_ROOM_CSV = "src\\case_study\\furama_resort\\data\\CSV_Files\\available_room.csv";
 
     public Map<Room, Integer> readAvailableRoomCSV() {
         Map<Room, Integer> availableRoomList = new LinkedHashMap<>();

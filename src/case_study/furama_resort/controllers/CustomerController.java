@@ -174,7 +174,7 @@ public class CustomerController {
                                                             flagEditCustomerType = true;
                                                             break;
                                                     }
-                                                } catch (NumberFormatException e){
+                                                } catch (NumberFormatException e) {
                                                     System.err.println("Hãy nhập số để lựa chọn");
                                                     flagEditCustomerType = true;
                                                 }
@@ -193,6 +193,9 @@ public class CustomerController {
                             } while (choiceEditCustomer != 9);
                             service.editCustomer(customer);
                         }
+                        break;
+                    default:
+                        System.out.println("Hãy nhập lựa chọn từ 1-3");
                         break;
                 }
             } catch (NumberFormatException e) {

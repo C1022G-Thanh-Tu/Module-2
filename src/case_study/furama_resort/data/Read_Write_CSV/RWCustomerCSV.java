@@ -1,4 +1,4 @@
-package case_study.furama_resort.Read_Write_CSV;
+package case_study.furama_resort.data.Read_Write_CSV;
 
 import case_study.furama_resort.model.person.Customer;
 
@@ -8,7 +8,7 @@ import java.util.List;
 
 public class RWCustomerCSV {
 
-    public static final String FILES_CUSTOMER_CSV = "D:\\CODEGYM\\Module2\\C1022G1\\src\\case_study\\furama_resort\\CSV_Files\\customer.csv";
+    public static final String FILES_CUSTOMER_CSV = "src\\case_study\\furama_resort\\data\\CSV_Files\\customer.csv";
 
     public List<Customer> readCustomerCSV() {
         List<Customer> customerList = new ArrayList<>();
@@ -29,9 +29,9 @@ public class RWCustomerCSV {
                     String email = temp[5];
                     int customerId = Integer.parseInt(temp[6]);
                     String customerType = temp[7];
-                    String customerAddress= temp[8];
-                    customer = new Customer(fullName,dateOfBirth,gender,indentityCardNumber,phoneNumber,email,customerId,
-                            customerType,customerAddress);
+                    String customerAddress = temp[8];
+                    customer = new Customer(fullName, dateOfBirth, gender, indentityCardNumber, phoneNumber, email, customerId,
+                            customerType, customerAddress);
                     customerList.add(customer);
                 }
             } catch (IOException e) {
@@ -52,11 +52,11 @@ public class RWCustomerCSV {
     public void writeAppendCustomerCSV(List<Customer> customerList) {
         BufferedWriter bufferedWriter = null;
         try {
-            bufferedWriter = new BufferedWriter(new FileWriter(FILES_CUSTOMER_CSV,true));
+            bufferedWriter = new BufferedWriter(new FileWriter(FILES_CUSTOMER_CSV, true));
             for (Customer customer : customerList) {
-                bufferedWriter.write(customer.getFullName()+","+customer.getDateOfBirth()+","+customer.getGender()
-                        +","+customer.getIndentityCardNumber()+","+customer.getPhoneNumber()+","+customer.getEmail()
-                        +","+customer.getCustomerId()+","+customer.getCustomerType()+","+customer.getCustomerAddress()+"\n");
+                bufferedWriter.write(customer.getFullName() + "," + customer.getDateOfBirth() + "," + customer.getGender()
+                        + "," + customer.getIndentityCardNumber() + "," + customer.getPhoneNumber() + "," + customer.getEmail()
+                        + "," + customer.getCustomerId() + "," + customer.getCustomerType() + "," + customer.getCustomerAddress() + "\n");
             }
             bufferedWriter.flush();
         } catch (IOException e) {
@@ -75,9 +75,9 @@ public class RWCustomerCSV {
         try {
             bufferedWriter = new BufferedWriter(new FileWriter(FILES_CUSTOMER_CSV));
             for (Customer customer : customerList) {
-                bufferedWriter.write(customer.getFullName()+","+customer.getDateOfBirth()+","+customer.getGender()
-                        +","+customer.getIndentityCardNumber()+","+customer.getPhoneNumber()+","+customer.getEmail()
-                        +","+customer.getCustomerId()+","+customer.getCustomerType()+","+customer.getCustomerAddress()+"\n");
+                bufferedWriter.write(customer.getFullName() + "," + customer.getDateOfBirth() + "," + customer.getGender()
+                        + "," + customer.getIndentityCardNumber() + "," + customer.getPhoneNumber() + "," + customer.getEmail()
+                        + "," + customer.getCustomerId() + "," + customer.getCustomerType() + "," + customer.getCustomerAddress() + "\n");
             }
             bufferedWriter.flush();
         } catch (IOException e) {

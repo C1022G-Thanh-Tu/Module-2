@@ -1,4 +1,4 @@
-package case_study.furama_resort.Read_Write_CSV;
+package case_study.furama_resort.data.Read_Write_CSV;
 
 import case_study.furama_resort.model.person.Employee;
 
@@ -8,7 +8,7 @@ import java.util.List;
 
 public class RWEmployeeCSV {
 
-    public static final String FILE_EMPLOYEE_CSV = "D:\\CODEGYM\\Module2\\C1022G1\\src\\case_study\\furama_resort\\CSV_Files\\employee.csv";
+    public static final String FILE_EMPLOYEE_CSV = "src\\case_study\\furama_resort\\data\\CSV_Files\\employee.csv";
 
     public List<Employee> readEmployeeCSV() {
         List<Employee> employeeList = new ArrayList<>();

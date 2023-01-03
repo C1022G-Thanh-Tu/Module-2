@@ -3,6 +3,7 @@ package case_study.furama_resort.controllers;
 import case_study.furama_resort.model.person.Employee;
 import case_study.furama_resort.services.class_service.EmployeeService;
 import case_study.furama_resort.services.interface_service.IEmployeeService;
+import case_study.furama_resort.utils.NotFoundException;
 
 import java.util.Scanner;
 
@@ -135,7 +136,11 @@ public class EmployeeController {
                         if (employee != null) {
                             service.deleteEmployee(employee);
                         } else {
-                            System.out.println("Hãy nhập đúng id");
+                            try {
+                                throw new NotFoundException("NotFoundException");
+                            } catch (NotFoundException e) {
+                                System.err.println("Không tìm thấy id để xóa");
+                            }
                         }
                         break;
                     case 4:
@@ -288,8 +293,15 @@ public class EmployeeController {
                             } while (choiceEditEmployee != 10);
                             service.editEmployee(employee1);
                         } else {
-                            System.out.println("Hãy nhập đúng id");
+                            try {
+                                throw new NotFoundException("NotFoundException");
+                            } catch (NotFoundException e) {
+                                System.err.println("Không tìm thấy id");
+                            }
                         }
+                        break;
+                    default:
+                        System.out.println("Hãy nhập lựa chọn từ 1-4");
                         break;
                 }
             } catch (NumberFormatException e) {
